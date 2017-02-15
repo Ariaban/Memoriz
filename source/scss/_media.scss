@@ -1,0 +1,219 @@
+/* UI/UX: RohanIT.ir */
+/* طراحی رابط و تجربه کاربری فن آوری اطلاعات روهان */
+@charset "utf-8";
+
+//$breakpoint-mobile: 768px;
+//$breakpoint-tablet: 1024px;
+//$breakpoint-wide: 1440px;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-wide: 1440px;
+
+
+@media (min-width: $breakpoint-wide) {
+    
+    body {
+        font-size: 1.35em/1em !important;
+    }
+    
+}
+
+
+
+//@media only screen and (max-width: $breakpoint-mobile) {
+    
+@media screen and (max-width: 768px) {
+    
+    body {
+        font-size: 1.15em/1em !important;
+    }
+    .blockHeaderSlider {
+        height: auto !important;
+        min-height: 560px !important;
+        padding-top: 35px !important;
+    }
+    .blockFooterDeckTxt,
+    .blockHeaderDeckTxt,
+    .blockHeaderDescriptTxt,
+    .blockHeaderAboutTxt,
+    .blockHeaderSliderTxt {
+        font: 1.45em/1em $fontYekan !important;
+    }
+    .blockFooterDeckTxt4,
+    .blockFooterDeckTxt2,
+    .blockHeaderDeckTxt2,
+    .blockHeaderDescriptTxt2,
+    .blockHeaderAboutTxt2,
+    .blockHeaderSliderTxt2 {
+        font: 0.9em/1em $fontYekan !important;
+    }
+    .blockHeaderSliderTxt3 {
+        li {
+            font: 1em/1em $fontApp !important;
+        }
+    }
+    .blockHeaderAbout {
+        background-position: center 330px !important;
+    }
+    .blockHeaderDescriptTxt {
+        padding-top: 10px !important;
+    }
+    .blockHeaderDescriptTxt2 {
+        padding-top: 5px !important;
+    }
+    .btnDefault {
+        width: 100%;
+    }
+    .panelHomePackPic {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 148px;
+    }
+    .packItemHomeTxtPlace {
+        width: 95%;
+        max-width: 95%;
+    }
+    .packItemHome {
+        display: block;
+        position: relative;
+        &:hover, &:focus {
+            .packItemHomeOver {
+                display: inline-block;
+                position: absolute;
+                height: 96px;
+                min-height: 96px;
+            }
+        }
+    }
+    .packItemNew {
+        display: block;
+        position: relative;
+        &:hover, &:focus {
+            .packItemNewOver {
+                display: inline-block;
+                position: absolute;
+                height: 96px;
+                min-height: 96px;
+            }
+        }
+    }
+    
+    
+}
+
+
+
+
+//@media only screen and (max-width: $breakpoint-tablet) {
+@media screen and (min-width: 769px) and (max-width: 1027px) {  
+    
+    .blockHeaderSlider {
+        padding-top: 45px !important;
+    }
+    .blockHeaderDescript {
+        min-height: 580px !important;
+    }
+    .blockHeaderDescriptTxt {
+        padding-top: 20px !important;
+    }
+    .blockHeaderDescriptTxt2 {
+        padding-top: 5px !important;
+    }
+    .blockHeaderDescript {
+        min-height: 480px !important;
+    }
+    .panelHomePackPic {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 148px;
+    }
+    .packItemHomeTxtPlace {
+        width: 95%;
+        max-width: 95%;
+//        width: 42% !important;
+//        max-width: 53% !important;
+    }
+    .packItemHome {
+        display: block;
+        position: relative;
+        &:hover, &:focus {
+            .packItemHomeOver {
+                display: inline-block;
+                position: absolute;
+                height: 96px;
+                min-height: 96px;
+            }
+        }
+    }
+    .packItemNew {
+        display: block;
+        position: relative;
+        &:hover, &:focus {
+            .packItemNewOver {
+                display: inline-block;
+                position: absolute;
+                height: 96px;
+                min-height: 96px;
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+
+@media screen and (min-width: 1028px) {  
+    
+    
+    .packItemHomeTxtPlace {
+        min-width: 39% !important;
+        width: 49%  !important;
+        max-width: 83%;
+        padding: 5px;
+        float: right;
+    }
+    
+    
+}
+
+
+
+
+
+
+@media screen and (min-width: 1330px) {  
+    
+    
+    .packItemHomeTxtPlace {
+        min-width: 39% !important;
+        width: 63%  !important;
+        max-width: 83%;
+        padding: 5px;
+        float: right;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

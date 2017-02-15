@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیستم کنترل پنل</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="logo.png" rel="icon" type="image/png">
+
+    <link href="css/uicon.css" rel="stylesheet" type="text/css">
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/fxsmall.css" /> -->
+    
+    <link rel="stylesheet" type="text/css" href="css/starability-all.css" />
+    
+    <!--[if lt IE 8]>
+      <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- <script src="../bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <!-- <script src="../bower_components/modernizr/src/Modernizr.js"></script> -->
+    <!-- <script src="js/modernizr.js"></script> -->
+    <script src="js/modernizr.custom.js"></script>
+    
+    <script src="scripts/tooltip.js"></script>
+    <script src="js/jquery.remodal.js"></script>
+    
+</head>
+<body class="bodyBack">
+
+<notify> <!-- notify place show -->
+</notify> <!-- /notify place show -->
+ 
+<notify-fix> <!-- notify-fix place show -->
+</notify-fix> <!-- /notify-fix place show -->
+
+<div class="full blockHeader">
+    <div class="col12">
+    <div id="gn-menu" class="col1">
+        <a class="btnMenuHamSmall">
+            <span class="icon" data-icon="&#xe419;"></span>
+        </a>
+        
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe22b;"></span>
+                                    <span class="gnmenuTxt">صفحه نخست</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe1e1;"></span>
+                                    <span class="gnmenuTxt">گروه های یادگیری</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        
+    </div>
+    <div class="col4">
+        <div class="headerSlang">
+            با مموریز ساده یاد بگیر
+        </div>
+    </div>
+    <div class="col2">
+        <div class="headerLogo">
+            <img src="images/memoriz logo icon.svg">
+        </div>
+    </div>
+    <div class="col5">
+        <div class="col blockHeaderBtnLogout">
+            <a href="#" class="btnMenuModeSmallLogout">
+                <span class="icon" data-icon="&#xe265;"></span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnVer">
+           <a href="#" class="btnMenuModeVer">
+               <span class="txt">ver. 1.1.2</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#" class="btnMenuModeUser">
+               <span class="icon" data-icon="&#xe070;"></span>
+               <span class="txt">نام کاربر کامل</span>
+            </a>
+        </div>
+    </div>
+    </div>
+</div> 
+
+<div class="row blockContentNew">
+    
+<div class="limit">
+	<div class="row block">
+            
+            <div class="row nobarPlace">
+                <div class="col1 nobarPlaceNoEnd">
+                    ۱۰۰
+                </div>
+                <div class="col10">
+                    <div class="row">
+                        
+                        
+                        <form>
+                            <input type="range" name="foo" min="0" max="100" style="width: 100%;">
+                            <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
+                        </form>
+                        <script>
+                            var el, newPoint, newPlace, offset;
+
+                            // Select all range inputs, watch for change
+                            $("input[type='range']").change(function() {
+
+                             // Cache this for efficiency
+                             el = $(this);
+
+                             // Measure width of range input
+                             width = el.width();
+
+                             // Figure out placement percentage between left and right of input
+                             newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+
+                              offset = -1;
+
+                             // Prevent bubble from going beyond left or right (unsupported browsers)
+                             if (newPoint < 0) { newPlace = 0; }
+                             else if (newPoint > 1) { newPlace = width; }
+                             else { newPlace = width * newPoint + offset; offset -= newPoint; }
+
+                             // Move bubble
+                             el
+                               .next("output")
+                               .css({
+                                 left: newPlace,
+                                 marginLeft: offset + "%"
+                               })
+                                 .text(el.val());
+                             })
+                             // Fake a change to position bubble at page load
+                             .trigger('change');
+                        </script>
+                        
+                    </div>
+                </div>
+                <div class="col1 nobarPlaceNoStart">
+                    ۱
+                </div>
+            </div>
+            
+            <div class="row contentPlace">
+                <div class="col12 cardPlace02">
+                    
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    <div class="row">
+                        <div class="cardItemBK" id="bkChange-toggle">
+                            
+                            
+                            
+<!--                            <div class="flip-container" id="flip-toggle" ontouchstart="this.classList.toggle('hover');">-->
+                            <div class="flip-container" id="flip-toggle">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <!-- front content -->
+                                        
+                                        <div class="cardItem">
+                                            جای مطالب روی کارت
+                                        </div>
+
+                                        <div class="row cardItemBtnPlace">
+                                            <div class="cardItemBtnGroup02">
+
+                                                <a class="cardItemBtnReturn" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');">
+                                                    <span class="icon" data-icon="&#xe029;"></span>
+                                                    <span class="txt">مشاهده پشت کارت</span>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="back">
+                                        <!-- back content -->
+                                        
+                                        <div class="cardItemBack">
+                                            جای مطالب پشت کارت
+                                        </div>
+
+                                        <div class="row cardItemBtnPlace">
+                                            <div class="cardItemBtnGroup02">
+
+                                                <a class="cardItemBtnAns01" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');">
+                                                    <div class="icon" data-icon="&#xe0cc;"></div>
+                                                    <div class="txt">راحت</div>
+                                                </a>
+                                                <a class="cardItemBtnAns02" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');">
+                                                    <div class="icon" data-icon="&#xe0bd;"></div>
+                                                    <div class="txt">متوسط</div>
+                                                </a>
+                                                <a class="cardItemBtnAns03" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');">
+                                                    <div class="icon" data-icon="&#xe130;"></div>
+                                                    <div class="txt">سخت</div>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="cardItemBtnGroup02">
+
+                            <a class="cardItemBtnReturnNew" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');">
+                                <div class="icon" data-icon="&#xe029;"></div>
+                                <div class="txt">روی کارت</div>
+                            </a>
+                            <a class="cardItemBtnReturnNew">
+                                <div class="icon" data-icon="&#xe016;"></div>
+                                <div class="txt">ذخیره کارت</div>
+                            </a>
+                            <a href="#modalDefault" class="cardItemBtnReturnNew">
+                                <div class="icon" data-icon="&#xe104;"></div>
+                                <div class="txt">گزارش خرابی</div>
+                            </a>
+
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        
+            <div class="row contentPlace">
+<!--                <div class="col12 cardPlaceInfo"> -->
+                <div class="col12">
+                
+                    <div class="row packItemNew">
+                        <div class="row">
+                            <div class="col panelHomePackPic"><img src=""></div>
+                            <div class="col5">
+                                <div class="row panelHomePackTitle">نام بسته</div>
+                                <div class="row panelHomePackDesc2">
+                                    توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                </div>
+                                <div class="row">
+                                    <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                    <span class="panelHomePackNo">۱۲۳</span>
+                                </div>
+                                <div class="row">
+                                    <span class="panelHomePackTag">تگ ها:</span>
+                                    <span class="panelHomePackTag">زبان</span>
+                                    <span class="panelHomePackTag">لغت</span>
+                                    <span class="panelHomePackTag">گرامر</span>
+                                </div>
+                            </div>
+                            <div class="col3 panelHomePackLearnBtnPLace">
+                                
+                                
+                                <div class="row">
+                                    <div align="left" class="RankRow">
+                                        <fieldset class="starability-basic">
+                                          <input type="radio" id="rate5" name="rating" value="5" />
+                                          <label for="rate5">5 stars, amazing.</label>
+
+                                          <input type="radio" id="rate4" name="rating" value="4" />
+                                          <label for="rate4">4 stars, very good.</label>
+
+                                          <input type="radio" id="rate3" name="rating" value="3" />
+                                          <label for="rate3">3 stars, average.</label>
+
+                                          <input type="radio" id="rate2" name="rating" value="2" />
+                                          <label for="rate2">2 stars, not good.</label>
+
+                                          <input type="radio" id="rate1" name="rating" value="1" />
+                                          <label for="rate1">1 star, terrible.</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+<!--
+                                <div class="row">
+                                    <a class="btnDefault03 btnZard">
+                                        <span class="icon" data-icon="&#xe031;"></span>
+                                        <span class="txt">افزودن به علاقه مندی های من</span>
+                                    </a>
+                                </div>
+-->
+                                <div class="row">
+                                    <div class="" style="height:45px;"></div>
+                                </div>
+                                <div class="row">
+                                    <a class="btnDefault03 btnGhermez">
+                                        <span class="icon" data-icon="&#xe284;"></span>
+                                        <span class="txt">خروج از یادگیری</span>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                            
+                    
+                    
+                    
+                </div>
+            </div>
+            
+            
+            
+        
+    </div>
+</div>
+
+<div class="limit">
+    <div class="row block">
+        <div class="col12 blockLFooterType">
+            تمامی حقوق محفوظ میباشد و متعلق به موسسه است، توسعه و پیاده سازی توسط آریابان.
+        </div>
+    </div>
+</div>
+
+</div>
+    
+<script src="scripts/classie.js"></script>
+<!-- script src="scripts/mainSlide.js"></script> -->
+<script src="scripts/gnmenu.js"></script>
+<script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
+</script>
+
+    
+<div class="remodal" data-remodal-id="modalDefault">
+    
+    <div class="remodalContentNew">
+        
+        <div class="formTitleInModalNote">
+            <div class="">گزارش خرابی به واحد پشتیبانی</div>
+        </div>
+
+        <div class="row rowSpaceForm">
+            <div class="col12">
+
+
+
+                <div class="remodalListForm">
+                    <div class="row rowSpaceFormNew">
+                        <div class="col2 formInputLabelTitle">نوع مشکل</div>
+                        <div class="col3">
+                            <div class="pagingRowNoPlace">
+                                <select class="formInputDefault rowwNo">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSpaceFormNew">
+                        <div class="col2 formInputLabelTitle">توضیحات</div>
+                        <div class="col10">
+                            <input class="formInputDefault" type="text" placeholder="توضیحات تکمیلی">
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="row rowSpaceForm">
+            <div class="col3"></div>
+            <div class="col3">
+                <a href="#" class="btnPageOk btnSabz">
+                    <span class="icon" data-icon="&#xe042;"></span>
+                    <span class="txt">تایید</span>
+                </a>
+            </div>
+            <div class="col3">
+                <a href="#" class="btnPageOk btnGhermez">
+                    <span class="icon" data-icon="&#xe042;"></span>
+                    <span class="txt">انصراف</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+</body>
+</html>
