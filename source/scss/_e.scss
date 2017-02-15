@@ -94,8 +94,13 @@
     }
 }
 .content-filter {
+    min-height: 640px;
     background-color: #fff;
     box-shadow: 0 0 5px 1px rgba(0,0,0,.07); 
+}
+.content-filterPagingPlace {
+    padding: 5px;
+    padding-left: 8px;
 }
 
     
@@ -115,6 +120,7 @@
 }
 
 .search-filter{
+    min-height: 540px;
     font: $fontSize*1.2 $fontApp;
     color: #333;
     background: rgba(255, 255, 255, 0.63);
@@ -143,7 +149,7 @@
         line-height: 25px;
         padding-right: 10px;
         overflow-y: auto;
-        max-height: 380px;
+//        max-height: 380px;
      
         li{
             width: 100%;
@@ -970,32 +976,34 @@
     background-image: url(../images/bkProfile.jpg);
     background-position: top right;
     background-size: contain;
-
-.panelHomePackTitle{
-    margin: 0;
-    padding: 5px 5px 0 0;
-    float: none;
-    text-align: center;
-    color: #fafafa;
-}
-.panelHomePackDesc2{
-    min-height: 30px;
-//    height: 28px;
-//    max-height: 28px;
-    line-height: 28px;
-    font: $fontSize*1.5 $fontApp;
-    margin: 0px;
-    padding: 5px;
-    color: #B35C04;
-    text-align: center;
-//    text-overflow: ellipsis;
-//    white-space: nowrap;
-//    overflow: hidden;
-}
-.panelHomePackDesc-i,.panelHomePackNo-i{
-    color:rgba(255,255,255,.65); 
-    font: $fontSize*1.2 $fontApp;
-}
+    .itemImgIn {
+        margin-bottom: 10px;
+    }
+    .panelHomePackTitle{
+        margin: 0;
+        padding: 5px 5px 0 0;
+        float: none;
+        text-align: center;
+        color: #fafafa;
+    }
+    .panelHomePackDesc2{
+        min-height: 30px;
+    //    height: 28px;
+    //    max-height: 28px;
+        line-height: 28px;
+        font: $fontSize*1.5 $fontApp;
+        margin: 0px;
+        padding: 5px;
+        color: #B35C04;
+        text-align: center;
+    //    text-overflow: ellipsis;
+    //    white-space: nowrap;
+    //    overflow: hidden;
+    }
+    .panelHomePackDesc-i,.panelHomePackNo-i{
+        color:rgba(255,255,255,.65); 
+        font: $fontSize*1.2 $fontApp;
+    }
 }
 
 .panelDetailsPackDescPlace-i{
