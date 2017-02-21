@@ -226,7 +226,7 @@ gulp.task('watch', function () {
 // Cleans the build directory
 gulp.task('clean', function () {
 //    rimraf('./dest/**/*');
-    return gulp.src('dest', {read: false})
+    return gulp.src('dest/*', {read: false})
     .pipe(clean());
 });
 
