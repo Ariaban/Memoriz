@@ -6,6 +6,14 @@
   font-size: 0.1em;
   color: transparent;
 }
+.starability-result-s {
+  position: relative;
+  width: 80px;
+  height: 16px;
+  background-image: url("../images/star-rank-s.png");
+  font-size: 0.1em;
+  color: transparent;
+}
 
 .starability-result:after {
   content: ' ';
@@ -15,53 +23,82 @@
   background-image: url("../images/star-rank.png");
   background-position: 0 -30px;
 }
+.starability-result-s:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  height: 16px;
+  background-image: url("../images/star-rank-s.png");
+  background-position: 0 -16px;
+}
 
 .starability-result[data-rating="5"]:after {
   width: 150px;
 }
-
 .starability-result[data-rating="4"]:after {
   width: 120px;
 }
-
 .starability-result[data-rating="3"]:after {
   width: 90px;
 }
-
 .starability-result[data-rating="2"]:after {
   width: 60px;
 }
-
 .starability-result[data-rating="1"]:after {
   width: 30px;
 }
 
+.starability-result-s[data-rating="5"]:after {
+  width: 80px;
+}
+.starability-result-s[data-rating="4"]:after {
+  width: 60px;
+}
+.starability-result-s[data-rating="3"]:after {
+  width: 40px;
+}
+.starability-result-s[data-rating="2"]:after {
+  width: 20px;
+}
+.starability-result-s[data-rating="1"]:after {
+  width: 0px;
+}
+
+
 .starability-basic {
-  display: block;
-  position: relative;
-  width: 150px;
-  min-height: 60px;
-  padding: 0;
-  border: none;
+    display: block;
+    position: relative;
+    width: 150px;
+    min-height: 60px;
+    padding: 0;
+    border: none;
+}
+.starability-basic-s {
+    display: block;
+    position: relative;
+    width: 80px;
+    min-height: 16px;
+    padding: 0;
+    border: none;
 }
 
 .starability-basic > input {
-  position: absolute;
-  margin-right: -100%;
-  opacity: 0;
+    position: absolute;
+    margin-right: -100%;
+    opacity: 0;
 }
 
 .starability-basic > input:checked ~ label,
 .starability-basic > input:focus ~ label {
-  background-position: 0 -30px;
+    background-position: 0 -30px;
 }
 
 .starability-basic > input:hover ~ label {
-  background-position: 0 -30px;
+    background-position: 0 -30px;
 }
 
 .starability-basic > input:focus + label {
-  outline: 1px dotted #999;
+    outline: 1px dotted #999;
 }
 
 .starability-basic > label {
@@ -75,6 +112,32 @@
   cursor: pointer;
   background-image: url("../images/star-rank.png");
   background-repeat: no-repeat;
+}
+.starability-basic-s > label {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  font-size: 0.1em;
+  color: transparent;
+/*  cursor: pointer;*/
+  background-image: url("../images/star-rank-s.png");
+  background-repeat: no-repeat;
+/*    background-position: 0 -16px;*/
+}
+.starability-basic-s > label.check {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 16px;
+  height: 16px;
+  font-size: 0.1em;
+  color: transparent;
+/*  cursor: pointer;*/
+  background-image: url("../images/star-rank-s.png");
+  background-repeat: no-repeat;
+    background-position: 0 -16px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi) {

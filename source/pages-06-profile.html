@@ -166,7 +166,7 @@
                 <div class="col6 panelProfileHomePlaceDivRight">
                     <div class="row panelProfileHomePlace">
                         
-                        <div class="col panelProfileHomePicPlace">
+                        <div class="col4 colM6 panelProfileHomePicPlace">
                             <div class="box inputfileProfilePlace">
                                 <input type="file" name="file-6[]" id="file-6" class="inputfileProfile" data-multiple-caption="{count} files selected" multiple="">
                                 <label for="file-6"><figure><div class="panelProfileHomePicAdd" style="background-image: url(images/userProfilePicOrangeAdd.jpg);"></div></figure></label>
@@ -174,13 +174,19 @@
                             </div>
                         </div>
                         
-                        <div class="col7 panelProfileHomePlaceTxt">
+                        <div class="col8 colM6 panelProfileHomePlaceTxt">
                             
                             <div class="row panelProfileHomeName">نام کامل کاربر</div>
                             <div class="row panelProfileHomeDesc">
                                 <span class="icon" data-icon="1"></span><span>بسته ویژه فعال: </span>
-                                <span class="panelProfileHomeDesc2">نام بسته فعال کاربر</span>
+                                <span class="panelProfileHomeDesc2">بسته ای وجود ندارد </span>
+                                <span class="panelProfileHomeDesc2"></span>
                             </div>
+                            <a class="btnDefault btnSabz">
+                                <span class="icon" data-icon="&#xe02c;"></span>
+                                <span class="txt">خرید بسته ویژه</span>
+                            </a>
+                             
                             <div class="row panelProfileHomeDesc">
                                 <span class="icon" data-icon="&#xe0e7;"></span><span>تاریخ خرید بسته: </span>
                                 <span class="panelProfileHomeDesc2">1395/12/29</span>
@@ -189,20 +195,105 @@
                         </div>
                     </div>
                 </div>
-                <div class="col6 panelProfileHomePlaceDiv">
+                <div class="col4 panelProfileHomePlaceDiv">
                     
                     <div class="row panelProfileHomeDesc">
-                        <span class="icon" data-icon=""></span><span>تعداد دسته کارت های من: </span>
-                        <span class="panelProfileHomeNo">1234</span>
+                        <span class="icon" data-icon=""></span><span>تعداد کل کارت های شما: </span>
+                        <span class="panelProfileHomeNoChart">1234</span>
+                    </div>
+                   <div class="row panelProfileHomeDesc">
+                                <span class="icon" data-icon=""></span><span>تعداد کل مجموعه کارت های فعال شما: </span>
+                                <span class="panelProfileHomeNoChart">12345</span>
+                            </div>
+                    <div class="row panelProfileHomeDescChart showChart">
+                        <span class="icon" data-icon=""></span><span>تعداد کارت های در حال یادگیری: </span>
+                        <span class="panelProfileHomeNoChart">12345</span>
+                    </div>
+                    <div class="row panelProfileHomeDescChart">
+                        <span class="icon" data-icon=""></span><span>کارت های یادگرفته شده: </span>
+                        <span class="panelProfileHomeNoChart">12345</span>
+                    </div>
+                    <div class="row panelProfileHomeDescChart">
+                        <span class="icon" data-icon=""></span><span>کارت هایی که به طور کامل یاد گرفته اید: </span>
+                        <span class="panelProfileHomeNoChart">12345</span>
                     </div>
                     <div class="row panelProfileHomeDesc">
-                        <span class="icon" data-icon=""></span><span>تعداد کارت های خوانده شده: </span>
-                        <span class="panelProfileHomeNo">12345</span>
+                        <div class="buttons btnChart"></div>
                     </div>
-                    <div class="row panelProfileHomeDesc">
-                        <span class="icon" data-icon=""></span><span>تعداد کارت های باقی مانده: </span>
-                        <span class="panelProfileHomeNo">12345</span>
-                    </div>
+                    
+                </div>
+                <div class="col2 panelProfileHomePlaceChart">
+                    
+                    <figure>
+                      
+                      <svg width="134" height="134" class="chart">
+                        <circle r="33" cx="67" cy="67" class="pie"/>
+                      </svg>
+                        
+                        
+                        
+                    </figure>
+                    
+                    <script>
+                    
+                    
+                        var total = 211,
+                        buttons = document.querySelector('.buttons'),
+                        pie = document.querySelector('.pie'),
+                        activeClass = 'active';
+
+                        var continents = {
+                            chart1: 25,
+                            chart2 : 50,
+                            chart3: 100,
+                        };
+
+                        // work out percentage as a result of total
+                        var numberFixer = function(num){
+                          var result = ((num * total) / 100);
+                          return result;
+                        }
+
+                        // create a button for each country
+                        for(property in continents){
+                          var newEl = document.createElement('button');
+                          newEl.innerText = property;
+                          newEl.setAttribute('data-name', property);
+                          buttons.appendChild(newEl);
+                        }
+
+                        // when you click a button setPieChart and setActiveClass
+                          buttons.addEventListener('click', function(e){
+                            if(e.target != e.currentTarget){
+                              var el = e.target,
+                                  name = el.getAttribute('data-name');
+                              setPieChart(name);
+                              setActiveClass(el);
+                            }
+                            e.stopPropagation();
+                          });
+
+                        var setPieChart = function(name){
+                          var number = continents[name],
+                              fixedNumber = numberFixer(number),
+                              result = fixedNumber + ' ' + total;
+
+                          pie.style.strokeDasharray = result;
+                        }
+
+                        var setActiveClass = function(el) {
+                          for(var i = 0; i < buttons.children.length; i++) {
+                            buttons.children[i].classList.remove(activeClass);
+                            el.classList.add(activeClass);
+                          }
+                        }
+
+                        // Set up default settings
+                        setPieChart('chart1');
+                        setActiveClass(buttons.children[0]);
+                        
+                    
+                    </script>
                     
                 </div>
             </div>
@@ -415,20 +506,20 @@
 
                                         <div class="rowSelectExpandIn2">
                                             <div class="row rowSpaceFormNew">
-                                                <div class="col5 formInputLabelTitle">عنوان لیبل:</div>
-                                                <div class="col7 formInputLabelNormal">نمونه متن</div>
+                                                <div class="col8 formInputLabelTitle">عنوان لیبل:</div>
+                                                <div class="col4 formInputLabelNormalLeft">نمونه متن</div>
                                             </div>
                                             <div class="row rowSpaceFormNew">
-                                                <div class="col5 formInputLabelTitle">عنوان لیبل:</div>
-                                                <div class="col7 formInputLabelNormal">نمونه متن</div>
+                                                <div class="col8 formInputLabelTitle">عنوان لیبل:</div>
+                                                <div class="col4 formInputLabelNormalLeft">نمونه متن</div>
                                             </div>
                                             <div class="row rowSpaceFormNew">
-                                                <div class="col5 formInputLabelTitle">عنوان لیبل:</div>
-                                                <div class="col7 formInputLabelNormal">نمونه متن</div>
+                                                <div class="col8 formInputLabelTitle">عنوان لیبل:</div>
+                                                <div class="col4 formInputLabelNormalLeft">نمونه متن</div>
                                             </div>
                                             <div class="row rowSpaceFormNew">
-                                                <div class="col5 formInputLabelTitle">عنوان لیبل:</div>
-                                                <div class="col7 formInputLabelNormal">نمونه متن</div>
+                                                <div class="col8 formInputLabelTitle">عنوان لیبل:</div>
+                                                <div class="col4 formInputLabelNormalLeft">نمونه متن</div>
                                             </div>
                                         </div>
 
