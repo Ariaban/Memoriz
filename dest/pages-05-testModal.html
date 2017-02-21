@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیستم کنترل پنل</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="logo.png" rel="icon" type="image/png">
+
+    <link href="css/uicon.css" rel="stylesheet" type="text/css">
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/fxsmall.css" /> -->
+    
+    <!--[if lt IE 8]>
+      <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- <script src="../bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <!-- <script src="../bower_components/modernizr/src/Modernizr.js"></script> -->
+    <!-- <script src="js/modernizr.js"></script> -->
+    <script src="js/modernizr.custom.js"></script>
+    
+    <script src="scripts/tooltip.js"></script>
+    <script src="js/jquery.remodal.js"></script>
+    
+</head>
+<body class="bodyBack">
+
+<notify> <!-- notify place show -->
+</notify> <!-- /notify place show -->
+ 
+<notify-fix> <!-- notify-fix place show -->
+</notify-fix> <!-- /notify-fix place show -->
+
+<div class="full blockHeader">
+    <div class="col12">
+    <div id="gn-menu" class="col1">
+        <a class="btnMenuHamSmall">
+            <span class="icon" data-icon="&#xe419;"></span>
+        </a>
+        
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe22b;"></span>
+                                    <span class="gnmenuTxt">صفحه نخست</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe1e1;"></span>
+                                    <span class="gnmenuTxt">گروه های یادگیری</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        
+    </div>
+    <div class="col4">
+        <div class="headerSlang">
+            با مموریز ساده یاد بگیر
+        </div>
+    </div>
+    <div class="col2">
+        <div class="headerLogo">
+            <img src="images/memoriz logo icon.svg">
+        </div>
+    </div>
+    <div class="col5">
+        <div class="col blockHeaderBtnLogout">
+            <a href="#" class="btnMenuModeSmallLogout">
+                <span class="icon" data-icon="&#xe265;"></span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnVer">
+           <a href="#" class="btnMenuModeVer">
+               <span class="txt">ver. 1.1.2</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#" class="btnMenuModeUser">
+               <span class="icon" data-icon="&#xe070;"></span>
+               <span class="txt">نام کاربر کامل</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#" class="btnMenuModeBuy">
+               <span class="icon" data-icon="&#xe02c;"></span>
+               <span class="txt">خرید</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#modalRegister" class="btnMenuModeUser">
+               <span class="icon" data-icon="&#xe0e8;"></span>
+               <span class="txt">عضویت</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#modalLogin" class="btnMenuModeUser">
+               <span class="icon" data-icon="&#xe070;"></span>
+               <span class="txt">ورود</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#modalDefault" class="btnMenuModeUser">
+               <span class="txt">نمونه مودال</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#modalLoading" class="btnMenuModeUser">
+               <span class="txt">نمونه لودینگ</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#modalDialogue" class="btnMenuModeUser">
+               <span class="txt">نمونه دایلوگ</span>
+            </a>
+        </div>
+    </div>
+    </div>
+</div> 
+
+<div class="remodal" data-remodal-id="modalLogin">
+    
+    <div class="formTitleInModal">
+        <div class="">ورود</div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+        <div class="col4">
+            <input class="formInputDefaultW" type="text" placeholder="09XXXXXXXXX">
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+        <div class="col4">
+            <input class="formInputDefaultW" type="text" placeholder="کلمه عبور">
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col6">
+            <a href="#" class="btnPageOk btnPageRecord">
+                <span class="icon" data-icon="&#xe042;"></span>
+                <span class="txt">ورود</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col6 formLinkInModal">
+            <a href="#" class="">آیا کلمه عبور خود را فراموش کرده اید؟</a>
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col6 formLinkInModal">
+            <a href="#" class="">آیا حساب کاربری ندارید؟</a>
+        </div>
+    </div>
+    
+</div>
+
+<div class="remodal" data-remodal-id="modalRegister">
+    
+    <div class="formTitleInModal">
+        <div class="">عضویت</div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+        <div class="col4">
+            <input class="formInputDefaultW" type="text" placeholder="09XXXXXXXXX">
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col6">
+            <a href="#" class="btnPageOk btnPageRecord">
+                <span class="icon" data-icon="&#xe042;"></span>
+                <span class="txt">عضویت</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col6 formLinkInModal">
+            <a href="#" class="">آیا حساب کاربری دارید؟</a>
+        </div>
+    </div>
+    
+</div>
+    
+<div class="remodal" data-remodal-id="modalDefault">
+    
+    <div class="row">
+            
+        
+        
+        
+        
+        
+        <div class="row scroll-y">
+                        <ul class="row bg-w">
+                            
+                            
+                            <li class="col12 packItemNew02" title="توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته" rel="tooltip">
+                                <div class="row">
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDescNew">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col4 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li class="col12 packItemNew02" title="توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته" rel="tooltip">
+                                <div class="row">
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDescNew">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col4 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li class="col12 packItemNew02" title="توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته" rel="tooltip">
+                                <div class="row">
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDescNew">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col4 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li class="col12 packItemNew02" title="توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته" rel="tooltip">
+                                <div class="row">
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDescNew">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col4 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li class="col12 packItemNew02" title="توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته" rel="tooltip">
+                                <div class="row">
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDescNew">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col4 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </ul>
+                        
+                    </div>
+                    
+                    
+        
+        
+        
+            
+    </div>
+    
+</div>
+    
+<div class="remodal" data-remodal-id="modalLoading">
+    
+    <section class="loaderModal">
+        <ul class="bokeh">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    
+    <div class="row">
+    
+        
+        
+        Preview Loading Sample <br>           
+        Preview Loading Sample <br>
+        Preview Loading Sample <br>
+        Preview Loading Sample <br>
+        Preview Loading Sample <br>
+        
+        
+            
+    </div>
+    
+</div>
+
+<div class="remodal" data-remodal-id="modalDialogue">
+    
+    <div class="formTitleInModalNote">
+        <div class="">عنوان دایلوگ</div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col12 formDescInModal">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col3"></div>
+        <div class="col3">
+            <a href="#" class="btnPageOk btnSabz">
+                <span class="icon" data-icon="&#xe042;"></span>
+                <span class="txt">تایید</span>
+            </a>
+        </div>
+        <div class="col3">
+            <a href="#" class="btnPageOk btnGhermez">
+                <span class="icon" data-icon="&#xe042;"></span>
+                <span class="txt">انصراف</span>
+            </a>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="row blockContentNew">
+    
+<div class="limit">
+	<div class="row block">
+        
+        <div class="col12 blockMessegeType success">
+            پیام موفقیت یا ...
+        </div>
+        <div class="col12 blockMessegeType alert">
+            پیام های توجه و ...
+        </div>
+        <div class="col12 blockMessegeType warning">
+            پیام های خطا و یا اخطار
+        </div>
+            
+        <div class="row contentPlace">
+            
+                                
+                                
+            <div class="col8 contentPlaceRight">
+                
+                
+                
+                
+                
+                <div class="row rowHeader02">
+                    <div class="col6 contentPlaceBtnPlace">
+                        <div class="col">
+                            <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
+                                <span class="icon" data-icon="&#xe145;"></span>
+                            </a>
+                        </div>
+                        <div class="col contentPlaceTitleSabz">
+                            بسته های موجود
+                        </div>
+                    </div>
+                    <div class="col3">
+                        <div class="col2 inputSearchContentIcon">
+                            <span class="icon" data-icon="&#xe215;"></span>
+                        </div>
+                        <div class="col10 inputSearchContentPlace">
+
+                            <div class="dropdownDefault">
+                                <select class="formInputDefault">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col3">
+                        <div class="col2 inputSearchContentIcon">
+                            <span class="icon" data-icon="&#xe1c6;"></span>
+                        </div>
+                        <div class="col10 inputSearchContentPlace">
+                            <input class="inputSearchContent" placeholder="جستجو">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row rowSelectHeader rowSelectHeaderDivider">
+                </div>
+                    
+                <div class="row">
+                    <ul class="row bg-w">
+
+<!--
+                        <li class="col12 panelHomePackItem02">
+                            <div class="row">
+                                <div class="col panelHomePackPic"><img src=""></div>
+                                <div class="col4">
+                                    <div class="row panelHomePackTitle">نام بسته</div>
+                                    <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                        <span class="panelHomePackNo">۱۲۳</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackTag02">تگ ها:</span>
+                                        <span class="panelHomePackTag02">زبان</span>
+                                        <span class="panelHomePackTag02">لغت</span>
+                                        <span class="panelHomePackTag02">گرامر</span>
+                                    </div>
+                                </div>
+                                <div class="col4 panelHomePackNoColored">
+                                    <div class="row">
+                                        <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                        <div class="col panelHomePackNoGreenTxt">تومان</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panelHomePackItemOver02">
+
+                                <div class="col2"></div>
+                                <div class="col8">
+                                    <div class="row overBtnPlace">
+                                        <div class="col6">
+                                            <a class="btnDefault btnSabz02">
+                                                <span class="icon" data-icon="&#xe35f;"></span>
+                                                <span class="txt">توضیحات</span>
+                                            </a>
+                                        </div>
+                                        <div class="col6">
+                                            <a class="btnDefault btnSabz">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">خرید</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+-->
+                        <li class="col12 packItemNew02">
+                                <div class="row">
+                                    <div class="col panelHomePackPic"><img src=""></div>
+                                    <div class="col5">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDesc2">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                            <span class="panelHomePackTag02">لغت</span>
+                                            <span class="panelHomePackTag02">گرامر</span>
+                                        </div>
+                                    </div>
+                                    <div class="col3 panelHomePackNoColored">
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col2"></div>
+                                    <div class="col8">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        
+
+                        <a class="col12 btnDefault btnTosi">
+
+                            <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
+
+                        </a>
+
+                    </ul>
+
+                </div>
+                    
+                    
+                    
+                
+                
+                
+                
+
+            </div>
+        
+        
+        
+        
+            <div class="col4 contentPlaceLeft">
+                
+                
+                
+                
+                
+                <div class="row rowHeader02">
+                    <div class="col6 contentPlaceBtnPlace">
+                        <div class="col">
+                            <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
+                                <span class="icon" data-icon="&#xe145;"></span>
+                            </a>
+                        </div>
+                        <div class="col contentPlaceTitleSabz">
+                            خرید بسته های ویژه
+                        </div>
+                    </div>
+                    <div class="col1">
+                        <div class="col2 inputSearchContentIcon">
+                        </div>
+                        <div class="col10 inputSearchContentPlace">
+                        </div>
+                    </div>
+                    <div class="col5 headerBtnPlace">
+                        <a class="btnDefault btnTosiNew">
+                            <span class="icon" data-icon="&#xe052;"></span>
+                            <span class="txt">بازگشت</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row rowSelectHeader rowSelectHeaderDivider">
+                </div>
+                
+                <div class="row">
+                    <ul class="row bg-w">
+
+                        <li class="col12 packItemNew02">
+                                <div class="row">
+                                    <div class="col panelHomePackPic"><img src=""></div>
+                                    <div class="col7">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDesc2">
+                                            توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                        </div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد :</span>
+                                            <span class="panelHomePackNo">۱۲۳</span>
+                                            <span class="panelHomePackTag02">تگ ها:</span>
+                                            <span class="panelHomePackTag02">زبان</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packItemNewOver02">
+                                    
+                                    <div class="col3"></div>
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        
+                        <a class="col12 btnDefault btnTosi">
+                            <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
+                        </a>
+
+                    </ul>
+
+                </div>
+                
+                
+                
+                
+
+            </div>
+            
+        
+        
+        
+        
+        
+            
+            
+        </div>
+        
+    </div>
+</div>
+    <link href="css/demo.css" rel="stylesheet" />
+    <script src="js/angular-1.3.15.min.js"></script>
+    <script src="js/angular-animate-1.3.15.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script>
+
+
+        var application = angular.module('app', ['ngRoute']);
+       
+    application.controller('mainCtrl', mainCtrl);
+    function mainCtrl($scope, modals) {
+
+        $scope.openMyModal = function () {
+//            var promise = modals.open("packmodal",backdrop : 'static', windowClass: 'zindex',
+            var promise = modals.open("packmodal",
+       {
+
+       }
+   );
+        }
+    };
+    application.controller('packsCtrl', function () {
+    });
+    // I manage the modals within the application.
+    application.service(
+        "modals",
+        function ($rootScope, $q) {
+
+            // I represent the currently active modal window instance.
+            var modal = {
+                deferred: null,
+                params: null
+            };
+
+            // Return the public API.
+            return ({
+                open: open,
+                params: params,
+                proceedTo: proceedTo,
+                reject: reject,
+                resolve: resolve
+            });
+
+
+            // ---
+            // PULBIC METHODS.s
+            // ---
+
+
+            // I open a modal of the given type, with the given params. If a modal
+            // window is already open, you can optionally pipe the response of the
+            // new modal window into the response of the current (cum previous) modal
+            // window. Otherwise, the current modal will be rejected before the new
+            // modal window is opened.
+            function open(type, params, pipeResponse) {
+
+                var previousDeferred = modal.deferred;
+
+                // Setup the new modal instance properties.
+                modal.deferred = $q.defer();
+                modal.params = params;
+
+                // We're going to pipe the new window response into the previous
+                // window's deferred value.
+                if (previousDeferred && pipeResponse) {
+
+                    modal.deferred.promise
+                        .then(previousDeferred.resolve, previousDeferred.reject)
+                    ;
+
+                    // We're not going to pipe, so immediately reject the current window.
+                } else if (previousDeferred) {
+
+                    previousDeferred.reject();
+
+                }
+
+                // Since the service object doesn't (and shouldn't) have any direct
+                // reference to the DOM, we are going to use events to communicate
+                // with a directive that will help manage the DOM elements that
+                // render the modal windows.
+                // --
+                // NOTE: We could have accomplished this with a $watch() binding in
+                // the directive; but, that would have been a poor choice since it
+                // would require a chronic watching of acute application events.
+                $rootScope.$emit("modals.open", type);
+
+                return (modal.deferred.promise);
+
+            }
+
+
+            // I return the params associated with the current params.
+            function params() {
+
+                return (modal.params || {});
+
+            }
+
+
+            // I open a modal window with the given type and pipe the new window's
+            // response into the current window's response without rejecting it
+            // outright.
+            // --
+            // This is just a convenience method for .open() that enables the
+            // pipeResponse flag; it helps to make the workflow more intuitive.
+            function proceedTo(type, params) {
+
+                return (open(type, params, true));
+
+            }
+
+
+            // I reject the current modal with the given reason.
+            function reject(reason) {
+
+                if (!modal.deferred) {
+
+                    return;
+
+                }
+
+                modal.deferred.reject(reason);
+
+                modal.deferred = modal.params = null;
+
+                // Tell the modal directive to close the active modal window.
+                $rootScope.$emit("modals.close");
+
+            }
+
+
+            // I resolve the current modal with the given response.
+            function resolve(response) {
+
+                if (!modal.deferred) {
+
+                    return;
+
+                }
+
+                modal.deferred.resolve(response);
+
+                modal.deferred = modal.params = null;
+
+                // Tell the modal directive to close the active modal window.
+                $rootScope.$emit("modals.close");
+
+            }
+
+        }
+    );
+
+
+    // I manage the views that are required to render the modal windows. I don't
+    // actually define the modals in anyway - I simply decide which DOM sub-tree
+    // should be linked. The means by which the modal window is defined is
+    // entirely up to the developer.
+    application.directive(
+        "bnModals",
+        function ($rootScope, modals) {
+
+            // Return the directive configuration.
+            return (link);
+
+
+            // I bind the JavaScript events to the scope.
+            function link(scope, element, attributes) {
+
+                // I define which modal window is being rendered. By convention,
+                // the subview will be the same as the type emitted by the modals
+                // service object.
+                scope.subview = null;
+
+                // If the user clicks directly on the backdrop (ie, the modals
+                // container), consider that an escape out of the modal, and reject
+                // it implicitly.
+                element.on(
+                    "click",
+                    function handleClickEvent(event) {
+
+                        if (element[0] !== event.target) {
+
+                            return;
+
+                        }
+
+                        scope.$apply(modals.reject);
+
+                    }
+                );
+
+                // Listen for "open" events emitted by the modals service object.
+                $rootScope.$on(
+                    "modals.open",
+                    function handleModalOpenEvent(event, modalType) {
+
+                        scope.subview = modalType;
+
+                    }
+                );
+
+                // Listen for "close" events emitted by the modals service object.
+                $rootScope.$on(
+                    "modals.close",
+                    function handleModalCloseEvent(event) {
+
+                        scope.subview = null;
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+    </script>
+    
+
+<div class="limit">
+    <div class="row block">
+        <div class="col12 blockLFooterType">
+            تمامی حقوق محفوظ میباشد و متعلق به موسسه است، توسعه و پیاده سازی توسط آریابان.
+        </div>
+    </div>
+</div>
+
+</div>
+    
+<div ng-app="app" ng-controller="mainCtrl">
+        <button ng-click="openMyModal()">open my modal</button>
+
+        <div align="center" bn-modals
+             ng-show="subview"
+             class="m-modals"
+             ng-switch="subview">
+            <!-- BEGIN: second Modal. -->
+            <div ng-switch-when="packmodal"
+                 ng-controller="packsCtrl"
+                 class="modal">
+                <div class="">
+                    <div class="">
+
+                        <div class="formTitleInModal">
+                            <div class="">ورود</div>
+                        </div>
+
+                        <div class="row rowSpaceForm">
+                            <div class="col3"></div>
+                            <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+                            <div class="col4">
+                                <input class="formInputDefaultW" type="text" placeholder="09XXXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="row rowSpaceForm">
+                            <div class="col3"></div>
+                            <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+                            <div class="col4">
+                                <input class="formInputDefaultW" type="text" placeholder="کلمه عبور">
+                            </div>
+                        </div>
+
+                        <div class="row rowSpaceForm">
+                            <div class="col3"></div>
+                            <div class="col6">
+                                <a href="#" class="btnPageOk btnPageRecord">
+                                    <span class="icon" data-icon="&#xe042;"></span>
+                                    <span class="txt">ورود</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row rowSpaceForm">
+                            <div class="col3"></div>
+                            <div class="col6 formLinkInModal">
+                                <a href="#" class="">آیا کلمه عبور خود را فراموش کرده اید؟</a>
+                            </div>
+                        </div>
+                        <div class="row rowSpaceForm">
+                            <div class="col3"></div>
+                            <div class="col6 formLinkInModal">
+                                <a href="#" class="">آیا حساب کاربری ندارید؟</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script src="scripts/classie.js"></script>
+<!-- script src="scripts/mainSlide.js"></script> -->
+<script src="scripts/gnmenu.js"></script>
+<script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
+</script>
+    
+</body>
+</html>

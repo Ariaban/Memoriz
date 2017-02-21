@@ -34,20 +34,20 @@ var basePaths = {
 };
 // App & Components Paths
 var paths = {
-    uploader: basePaths.comp + 'uploader/',
-    grid: basePaths.comp + 'grid/',
-    singlePage: basePaths.comp + 'singlePage/',
+//    uploader: basePaths.comp + 'uploader/',
+//    grid: basePaths.comp + 'grid/',
+//    singlePage: basePaths.comp + 'singlePage/',
     sass: [
         basePaths.src + 'scss/',
-        basePaths.comp + 'uploader/scss/',
-        basePaths.comp + 'grid/scss/',
-        basePaths.comp + 'singlePage/scss/'
+//        basePaths.comp + 'uploader/scss/',
+//        basePaths.comp + 'grid/scss/',
+//        basePaths.comp + 'singlePage/scss/'
     ],
     css: [
         basePaths.src + 'css/',
-        basePaths.comp + 'uploader/css/',
-        basePaths.comp + 'grid/css/',
-        basePaths.comp + 'singlePage/css/'
+//        basePaths.comp + 'uploader/css/',
+//        basePaths.comp + 'grid/css/',
+//        basePaths.comp + 'singlePage/css/'
     ],
     js: [
         basePaths.bower + 'modernizr/src/modernizr.js',
@@ -55,9 +55,9 @@ var paths = {
     ],
     scripts: [
         basePaths.src + 'scripts/',
-        basePaths.comp + 'uploader/scripts/',
-        basePaths.comp + 'grid/scripts/',
-        basePaths.comp + 'singlePage/scripts/'
+//        basePaths.comp + 'uploader/scripts/',
+//        basePaths.comp + 'grid/scripts/',
+//        basePaths.comp + 'singlePage/scripts/'
     ]
 };
 
@@ -77,7 +77,7 @@ gulp.task('connect', function () {
 gulp.task('livereload', function () {
     gulp.src([basePaths.src + '*.html',
               basePaths.src + 'stylesheets/*.css',
-              basePaths.src + 'tv/*.html',
+//              basePaths.src + 'tv/*.html',
               basePaths.src + 'css/*.css',
               basePaths.src + 'scripts/*.js'])
         .pipe(watch())
@@ -88,10 +88,10 @@ gulp.task('livereload', function () {
 // HTML task
 gulp.task('html', function () {
     gulp.src([basePaths.src + '*.html',
-              basePaths.src + 'tv/*.html',
-              paths.uploader + '*.html',
-              paths.grid + '*.html',
-              paths.singlePage + '*.html'
+//              basePaths.src + 'tv/*.html',
+//              paths.uploader + '*.html',
+//              paths.grid + '*.html',
+//              paths.singlePage + '*.html'
              ])
         .pipe(connect.reload())
         .pipe(notify({ message: 'HTML Task ---> Connect Reloaded' }));
@@ -227,12 +227,14 @@ gulp.task('clean', function (cb) {
     rimraf('./dest', cb);
 });
 
-var a = basePaths.src + 'scss';
+var condition = './source/scss';
+//var condition = basePaths.src + './source/scss/';
 
 // Copies everything in the source folder except scss
 gulp.task('copy', function () {
-        gulp.src(basePaths.src + '**/*')
-        .pipe(gulpIgnore.exclude(a))
+//        gulp.src(basePaths.src + '**/*')
+        gulp.src(['./source/**/*', '!./source/scss/**/*'])
+//        .pipe(gulpIgnore.exclude(condition))
         .pipe(gulp.dest(basePaths.dest));
 });
 
@@ -242,6 +244,10 @@ gulp.task('copy', function () {
 gulp.task('default', ['lint', 'compass', 'scripts', 'watch']);
 
 gulp.task('build', function (cb) {
-    runSequence('clean', ['copy', 'compass'], cb);
+//    runSequence('clean', ['copy', 'compass'], cb);
+    runSequence('compile', 'clean', 'copy');
 });
+
+
+
 

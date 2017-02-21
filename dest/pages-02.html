@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیستم کنترل پنل</title>
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="logo.png" rel="icon" type="image/png">
+
+    <link href="css/uicon.css" rel="stylesheet" type="text/css">
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/fxsmall.css" /> -->
+    
+    <!--[if lt IE 8]>
+      <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- <script src="../bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <!-- <script src="../bower_components/modernizr/src/Modernizr.js"></script> -->
+    <!-- <script src="js/modernizr.js"></script> -->
+    <script src="js/modernizr.custom.js"></script>
+    
+    <script src="scripts/tooltip.js"></script>
+    
+</head>
+<body class="bodyBack">
+
+<notify> <!-- notify place show -->
+</notify> <!-- /notify place show -->
+ 
+<notify-fix> <!-- notify-fix place show -->
+</notify-fix> <!-- /notify-fix place show -->
+
+<div class="full blockHeader">
+    <div class="col12">
+    <div id="gn-menu" class="col1">
+        <a class="btnMenuHamSmall">
+            <span class="icon" data-icon="&#xe419;"></span>
+        </a>
+        
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe22b;"></span>
+                                    <span class="gnmenuTxt">صفحه نخست</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe1e1;"></span>
+                                    <span class="gnmenuTxt">گروه های یادگیری</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+        
+    </div>
+    <div class="col4">
+        <div class="headerSlang">
+            با مموریز ساده یاد بگیر
+        </div>
+    </div>
+    <div class="col2">
+        <div class="headerLogo">
+            <img src="images/memoriz logo icon.svg">
+        </div>
+    </div>
+    <div class="col5">
+        <div class="col blockHeaderBtnLogout">
+            <a href="#" class="btnMenuModeSmallLogout">
+                <span class="icon" data-icon="&#xe265;"></span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnVer">
+           <a href="#" class="btnMenuModeVer">
+               <span class="txt">ver. 1.1.2</span>
+            </a>
+        </div>
+        <div class="col blockHeaderBtnUser">
+           <a href="#" class="btnMenuModeUser">
+               <span class="icon" data-icon="&#xe070;"></span>
+               <span class="txt">نام کاربر کامل</span>
+            </a>
+        </div>
+    </div>
+    </div>
+</div> 
+
+<div class="row blockContentNew">
+    
+<div class="limit">
+	<div class="row block">
+            
+            <div class="row contentPlace">
+                <div class="col12">
+                    
+                    
+                    
+                    
+                    
+                    <div class="row rowHeader01">
+                        <div class="col4 contentPlaceBtnPlace">
+                        </div>
+                        <div class="col8">
+                            <div class="col3 headerBtnPlace">
+                                <a class="btnDefault btnAbi">
+                                    <span class="icon" data-icon="&#xe1bb;"></span>
+                                    <span class="txt">شروع یادگیری</span>
+                                </a>
+                            </div>
+                            <div class="col3 headerBtnPlace">
+                                <a class="btnDefault btnTosi">
+                                    <span class="icon" data-icon="2"></span>
+                                    <span class="txt">بازی</span>
+                                </a>
+                            </div>
+                            <div class="col3 headerBtnPlace">
+                                <a class="btnDefault btnTosi">
+                                    <span class="icon" data-icon=","></span>
+                                    <span class="txt">کپی دسته</span>
+                                </a>
+                            </div>
+                            <div class="col3 headerBtnPlace">
+                                <a class="btnDefault btnTosiNew">
+                                    <span class="icon" data-icon="&#xe052;"></span>
+                                    <span class="txt">بازگشت</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row rowSelectHeader rowSelectHeaderDividerSpace">
+                    </div>
+                    
+                    <div class="row menuTab">
+            
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <label for="tab1"><span class="icon" data-icon=""></span>توضیحات</label>
+                        <input id="tab2" type="radio" name="tabs">
+                        <label for="tab2"><span class="icon" data-icon=""></span>تنظیمات آزمون</label>
+                        <input id="tab3" type="radio" name="tabs">
+                        <label for="tab3"><span class="icon" data-icon=""></span>تنظیمات یادگیری</label>
+                        <input id="tab4" type="radio" name="tabs">
+                        <label for="tab4"><span class="icon" data-icon=""></span>تاریخچه</label>
+                        <input id="tab5" type="radio" name="tabs">
+                        <label for="tab5"><span class="icon" data-icon=""></span>کارت ها</label>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <section id="content1">
+                            <div class="row itemSpace">
+                                
+                                
+                                <div class="col8">
+                                    
+                                    <div class="row panelDetailsPackItem">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col4">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackTag">تگ ها:</span>
+                                                <span class="panelHomePackTag">زبان</span>
+                                                <span class="panelHomePackTag">لغت</span>
+                                                <span class="panelHomePackTag">گرامر</span>
+                                            </div>
+                                        </div>
+                                        <div class="col4 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row panelDetailsPackDescPlace">
+                                        <div class="panelDetailsPackDesc">
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                        
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="row">
+                                        <a class="col12 btnDefault btnAbi">
+                                            <span class="txt"><span class="icon" data-icon="&#xe1bb;"></span>شروع یادگیری</span>
+                                        </a>
+                                    </div>
+                                
+                                </div>
+                                <div class="col4 cardPlace">
+                                    
+                                    <div class="row cardPlaceLev">
+                                        <div class="flip-container" id="flip-toggle">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <!-- front content -->
+
+                                                    <div class="cardItem">
+                                                        جای مطالب روی کارت
+                                                    </div>
+
+                                                </div>
+                                                <div class="back">
+                                                    <!-- back content -->
+
+                                                    <div class="cardItemBack">
+                                                        جای مطالب پشت کارت
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row cardItemBtnPlace">
+                                        <div class="cardItemBtnGroup">
+
+                                            <a class="col cardItemBtn"><span class="icon" data-icon="&#xe247;"></span></a>
+
+                                            <a class="col cardItemBtn" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');"><span class="icon" data-icon="&#xe029;"></span></a>
+
+                                            <a class="col cardItemBtn"><span class="icon" data-icon="&#xe248;"></span></a>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                
+                                
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        
+                        
+                        <section id="content2">
+                            <div class="row itemSpace">
+                                
+                                
+                                
+                                content2
+                                
+                                
+                                
+                                
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        
+                        <section id="content3">
+                            <div class="row itemSpace">
+                                
+                                
+                                
+                                content3
+                                
+                                
+                                
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        
+                        
+                        <section id="content4">
+                            <div class="row itemSpace">
+                                
+                                
+                                content4
+                                
+                                
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <section id="content5">
+                            <div class="row itemSpace">
+                                
+                                
+                                
+                                
+                                
+                                <div class="col4">
+                                    
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="panelHomePackTitle">نام بسته</div>
+                                    </div>
+                                    
+                                    <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                        <span class="panelHomePackNo">۱۲۳</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackTag">تگ ها:</span>
+                                        <span class="panelHomePackTag">زبان</span>
+                                        <span class="panelHomePackTag">لغت</span>
+                                        <span class="panelHomePackTag">گرامر</span>
+                                    </div>
+
+                                    <div class="row">
+                                        <span class="panelHomePackLabel">لیبل اضافه</span>
+                                        <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackLabel">لیبل اضافه</span>
+                                        <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackLabel">لیبل اضافه</span>
+                                        <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                                
+                                <div class="col4 cardPlace">
+                                    
+                                    <div class="row cardPlaceLev">
+                                        <div class="flip-container" id="flip-toggle">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <!-- front content -->
+
+                                                    <div class="cardItem">
+                                                        جای مطالب روی کارت
+                                                    </div>
+
+                                                </div>
+                                                <div class="back">
+                                                    <!-- back content -->
+
+                                                    <div class="cardItemBack">
+                                                        جای مطالب پشت کارت
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row cardItemBtnPlace">
+                                        <div class="cardItemBtnGroup">
+
+                                            <a class="col cardItemBtn"><span class="icon" data-icon="&#xe247;"></span></a>
+
+                                            <a class="col cardItemBtn" onclick="document.querySelector('#flip-toggle').classList.toggle('flipy');"><span class="icon" data-icon="&#xe029;"></span></a>
+
+                                            <a class="col cardItemBtn"><span class="icon" data-icon="&#xe248;"></span></a>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="col1"></div>
+                                <div class="col2 contentPlaceBtnDetails">
+                                    
+                                    <a class="btnDefault03 btnZard">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">علاقه مندی</span>
+                                    </a>
+                                    <a class="btnDefault03 btnAbi">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">ویرایش کارت</span>
+                                    </a>
+                                    <a class="btnDefault03 btnSabz">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">افزودن کارت</span>
+                                    </a>
+                                    <a class="btnDefault03 btnGhermez">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">حذف کارت</span>
+                                    </a>
+                                    
+                                </div>
+                                
+                                
+                                
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        
+                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="row rowHeader02">
+                        <div class="col6 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleSabz">
+                                خرید بسته های ویژه
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+                    
+<!--                    <div class="row scroll-y02">-->
+                    <div class="row">
+                        <ul class="row bg-w">
+                            
+                            
+                            <li class="col4 panelHomePackItem02">
+                                <div class="row">
+                                    <div class="col panelHomePackPic"><img src=""></div>
+                                    <div class="col7">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panelHomePackItemOver02">
+                                    
+                                    <div class="col3"></div>
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            
+                            <li class="col4 panelHomePackItem02">
+                                <div class="row">
+                                    <div class="col panelHomePackPic"><img src=""></div>
+                                    <div class="col7">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panelHomePackItemOver02">
+                                    
+                                    <div class="col3"></div>
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            
+                            <li class="col4 panelHomePackItem02">
+                                <div class="row">
+                                    <div class="col panelHomePackPic"><img src=""></div>
+                                    <div class="col7">
+                                        <div class="row panelHomePackTitle">نام بسته</div>
+                                        <div class="row panelHomePackDesc">توضیحات مرتبط با این بسته</div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">۴۵۰۰</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panelHomePackItemOver02">
+                                    
+                                    <div class="col3"></div>
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a class="btnDefault btnSabz">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            
+                            
+                            
+                            <a class="col12 btnDefault btnTosi">
+                                
+                                <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
+                                
+                            </a>
+                            
+                            
+                            
+                            
+                        </ul>
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            
+            
+            
+        
+    </div>
+</div>
+
+<div class="limit">
+    <div class="row block">
+        <div class="col12 blockLFooterType">
+            تمامی حقوق محفوظ میباشد و متعلق به موسسه است، توسعه و پیاده سازی توسط آریابان.
+        </div>
+    </div>
+</div>
+
+</div>
+    
+<script src="scripts/classie.js"></script>
+<!-- script src="scripts/mainSlide.js"></script> -->
+<script src="scripts/gnmenu.js"></script>
+<script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
+</script>
+    
+</body>
+</html>
