@@ -3153,6 +3153,57 @@ form {
     margin: 0px auto;
     padding: 15px;
 }
+
+
+
+a.iconBadgePlace {
+    display: block;
+    position: absolute;
+
+    top: -5px;
+    left: 10px;
+
+    width: 43px;
+    height: 70px;
+
+    background-color: transparent;
+
+    margin: auto;
+    padding: 0px;
+
+    z-index: 96;
+
+    .icon {
+        color: #EB5367;
+        font: $fontSize*3.95 $fontIcon;
+    }
+    
+    .iconBadgePlace2 {
+        display: block;
+        position: absolute;
+
+        top: 5px;
+        left: 0;
+
+        width: 37px;
+//        height: 70px;
+
+        background-color: transparent;
+
+        margin: 0px auto;
+        padding: 5px;
+
+        z-index: 99;
+
+        .icon {
+            color: $colorWhite;
+            font: $fontSize*1.25 $fontIcon;
+        }
+    }
+}
+
+
+
 .cardItem {
     width: 320px;
     min-width: 320px;
@@ -3418,9 +3469,11 @@ form {
     .icon {
         display: block;
         position: relative;
+        height: 64px;
+        line-height: 64px;
         vertical-align: middle;
         font: 2.25em/1em $fontIcon;
-        margin-top: 8px;
+        margin-top: 16px;
         padding: 0px 6px;
         clear: both;
     }
@@ -3459,9 +3512,11 @@ form {
     .icon {
         display: block;
         position: relative;
+        height: 64px;
+        line-height: 64px;
         vertical-align: middle;
         font: 2.25em/1em $fontIcon;
-        margin-top: 8px;
+        margin-top: 16px;
         padding: 0px 6px;
         clear: both;
     }
@@ -3584,9 +3639,18 @@ form {
 }
 
 
+.sky-tabs > ul.contentCardSaveAll {
+    list-style: none !important;
+    list-style-type: none !important;
+}
 .sky-tabs > ul.contentCardSave {
     list-style: none !important;
     list-style-type: none !important;
+}
+.sky-tabs ol, .sky-tabs ul {
+    ul.contentCardSaveAll {
+        list-style: none !important;
+    }
 }
 .sky-tabs ol, .sky-tabs ul {
     ul.contentCardSave {
@@ -3614,6 +3678,13 @@ form {
     list-style: none;
     background-color: $colorWhite;
 }
+.contentCardSaveAll {
+    display: block;
+    position: relative;
+    list-style: none !important;
+    margin: 0px;
+    padding: 0px;
+}
 .contentCardSave {
     display: block;
     position: relative;
@@ -3621,12 +3692,13 @@ form {
     margin: 0px;
     padding: 0px;
 }
-ul.contentCardSave {
+ul.contentCardSaveAll {
     display: block;
     position: relative;
     list-style: none !important;
     margin: 0px;
     padding: 0px;
+//    float: right;
     li:before {
         position: relative !important;
         top: auto;
@@ -3641,22 +3713,77 @@ ul.contentCardSave {
         text-align: center;
         margin: 0px auto;
         padding: 5px;
-        .cardItemInfo {
-            width: 200px;
+        clear: both;
+    }
+}
+.cardItemInfo {
+    display: block;
+    position: relative;
+    list-style: none !important;
+    width: 200px;
             margin: 5px;
-            margin-left: 10px;
-        }
-        .cardItemInfoEmpty {
-            width: 105px;
+    text-align: center;
+    margin: 0px auto;
+    margin-left: 10px;
+    padding: 5px;
+    float: right;
+}
+.contentCardSave {
+    display: block;
+    position: relative;
+    list-style: none !important;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    li:before {
+        position: relative !important;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+    }
+    li {
+        display: block;
+        position: relative;
+        list-style: none !important;
+        text-align: center;
+        margin: 0px auto;
+        padding: 0px;
+        .cardItem {
             margin: 5px;
         }
-        .cardItemInfoEmpty02 {
-            width: 65px;
+        .cardItemBack {
             margin: 5px;
         }
-        .cardItemMore {
-            margin-top: 10px !important;
-        }
+        
+    }
+    .cardItemInfoEmpty02 {
+        display: block;
+        position: relative;
+        width: 90px;
+    }
+}
+ul.contentCardSaveItems {
+    display: block;
+    position: relative;
+    list-style: none !important;
+    margin: 0px;
+    padding: 0px;
+//    float: left;
+    li:before {
+        position: relative !important;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+    }
+    li {
+        display: block;
+        position: relative;
+        list-style: none !important;
+        text-align: center;
+        margin: 0px auto;
+        padding: 0px;
         .cardItem {
             margin: 5px;
         }
@@ -5355,6 +5482,10 @@ ul.contentCardSave {
         text-align: center;
         margin: 6px auto;
         padding: 6px;
+        form {
+            padding: 0px;
+            margin: 0px;
+        }
         .editPackageBtnPlace {
             display: block;
             position: relative;
@@ -10583,6 +10714,14 @@ a.panelProfileHomeLinkFree {
     position: relative;
     width: 49%;
     max-width: 73%;
+    padding: 5px;
+    float: right;
+}
+.packItemHomeTxtPlaceLarge {
+    display: block;
+    position: relative;
+    width: 49%;
+    max-width: 83%;
     padding: 5px;
     float: right;
 }

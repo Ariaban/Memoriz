@@ -17,6 +17,7 @@ var rename      = require('gulp-rename');
 var livereload  = require('gulp-livereload');
 var runSequence = require('run-sequence');
 var rimraf      = require('rimraf');
+var clean       = require('gulp-clean');
 var connect     = require('gulp-connect');
 
 // PATHS
@@ -223,8 +224,10 @@ gulp.task('watch', function () {
 });
 
 // Cleans the build directory
-gulp.task('clean', function (cb) {
-    rimraf('./dest', cb);
+gulp.task('clean', function () {
+//    rimraf('./dest/**/*');
+    return gulp.src('dest', {read: false})
+    .pipe(clean());
 });
 
 var condition = './source/scss';

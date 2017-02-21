@@ -75,6 +75,10 @@ $breakpoint-wide: 1440px;
         width: 95%;
         max-width: 95%;
     }
+    .packItemHomeTxtPlaceLarge {
+        width: 95%;
+        max-width: 95%;
+    }
     .packItemHome {
         display: block;
         position: relative;
@@ -136,6 +140,12 @@ $breakpoint-wide: 1440px;
 //        width: 42% !important;
 //        max-width: 53% !important;
     }
+    .packItemHomeTxtPlaceLarge {
+        width: 95%;
+        max-width: 95%;
+//        width: 42% !important;
+//        max-width: 53% !important;
+    }
     .packItemHome {
         display: block;
         position: relative;
@@ -178,6 +188,13 @@ $breakpoint-wide: 1440px;
         padding: 5px;
         float: right;
     }
+    .packItemHomeTxtPlaceLarge {
+        min-width: 39% !important;
+        width: 73%  !important;
+        max-width: 83%;
+        padding: 5px;
+        float: right;
+    }
     
     
 }
@@ -193,6 +210,13 @@ $breakpoint-wide: 1440px;
     .packItemHomeTxtPlace {
         min-width: 39% !important;
         width: 63%  !important;
+        max-width: 83%;
+        padding: 5px;
+        float: right;
+    }
+    .packItemHomeTxtPlaceLarge {
+        min-width: 39% !important;
+        width: 83%  !important;
         max-width: 83%;
         padding: 5px;
         float: right;
