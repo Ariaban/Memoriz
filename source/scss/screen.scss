@@ -1386,6 +1386,13 @@ blockquote.custom cite {
     margin: 0px;
     padding: 10px;
     z-index: 9;
+    
+    form {
+        display: block;
+        position: relative;
+        margin: 10px 0px;
+        padding: 0px;
+    }
     .blockFooterDeckTxt {
         color: #FFFFFF !important;
         font: 2em/1em $fontYekan;
@@ -1397,18 +1404,18 @@ blockquote.custom cite {
         line-height: 27px !important;
         vertical-align: middle;
         font: 1em/1em $fontYekan;
-        text-align: center;
+        text-align: right;
         padding-top: 10px;
         margin-bottom: 35px;
     }
     .blockFooterDeckTxt4 {
         color: #E1E1E1 !important;
         font: 1em/1em $fontYekan;
-        text-align: center;
+        text-align: right;
         padding-top: 10px;
         margin-bottom: 5px;
         > span {
-            display: block;
+            display: inline-block;
             position: relative;
             height: 25px;
             line-height: 25px;
@@ -2568,6 +2575,17 @@ a.btnMenuModeSmallDef, a.btnMenuModeSmallDef:visited {
     &:hover {
         background-color: $colorSuccess;
         color: $colorSuccessTxt;
+    }
+}
+.btnPageSend {
+//  @extend .btnMenuMode;
+    @extend .btnFormMode;
+    background-color: #222222 !important;
+    color: #A9A9A9 !important;
+    font: 0.95em/1em $fontYekan;
+    &:hover {
+        background-color: $colorSuccess !important;
+        color: $colorSuccessTxt !important;
     }
 }
 .btnPageOk.btnColored {
@@ -7185,6 +7203,39 @@ select.form-control {
 
 
 
+
+.formInputLabelTitleFormHome {
+    display: block;
+    position: relative;
+    color: #E1E1E1;
+    font: $fontSize*1 $fontYekan;
+    font-weight: 400;
+    text-align: right;
+    padding-top: 8px;
+    padding-right: 8px;
+    top: 3px;
+}
+
+
+
+
+.formInputDefaultFormHome {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    vertical-align: middle;
+    background-color: #444444;
+    color: $colorWhiteD;
+    font: 1.05em/1em $fontApp;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    @include border-radius($borderRadius);
+    @include box-shadow(inset 2px 2px 2px #222222);
+    padding: 2px 8px 0 4px;
+}
 .formInputDefault {
     display: block;
     position: relative;
@@ -7236,6 +7287,32 @@ select.form-control {
 .formInputDefaultW::-ms-input-placeholder,
 .formInputDefault::-ms-input-placeholder {
     color: #C4C4C4;
+}
+textarea.formTextareaDefaultFormHome {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 78px;
+    vertical-align: middle;
+    text-align: right;
+    direction: rtl;
+    font-weight: 400;
+    
+    resize: none;
+    
+    line-height: 37px;
+    vertical-align: middle;
+    background-color: #444444;
+    color: $colorWhiteD;
+    font: 1.05em/1em $fontApp;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    @include border-radius($borderRadius);
+    @include box-shadow(inset 2px 2px 2px #222222);
+    padding: 2px 8px 0 4px;
+    
 }
 textarea.formTextareaDefault {
     display: block;
@@ -16503,10 +16580,32 @@ dt {
   margin-bottom: 20px;
   margin-right: 130px;
 }
+dl.expand {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 100%;
+  max-width: 860px;
+  position: relative;
+  padding: 20px;
+}
+dt.expand {
+  align-self: flex-start;
+  width: 100%;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-right: 270px;
+}
 .text {
-    font-weight: 600;
+    font-weight: 400;
     display: flex;
+    font-size: 1em;
     align-items: center;
+    text-align: left;
     height: 40px;
     width: 130px;
     background-color: white;
@@ -16548,6 +16647,43 @@ dt {
     }
   }
 }
+.percentageExpand {
+    font-size: 1em;
+    line-height: 1;
+    text-transform: uppercase;
+    width: 100%;
+    height: 40px;
+    margin-right: 270px;
+    background: repeating-linear-gradient(
+    to right,
+    #ddd,
+    #ddd 1px,
+    #fff 1px,
+    #fff 5%
+);
+  &:after {
+    content: "";
+    display: block;
+    background-color: #FD8335;
+    width: 50px;
+    margin-bottom: 10px;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .3s ease;
+    cursor: pointer;
+  }
+  &:hover,
+  &:focus {
+    &:after {
+       background-color: #B45D05; 
+    }
+  }
+    .text {
+        width: 230px !important;
+    }
+}
 @for $i from 0 through 100 {
   .percentage-#{$i} {
     &:after {
@@ -16571,7 +16707,15 @@ svg.chart {
     background: #FFA926;
     border-radius: 50%;
     display: block;
-    circle {
+    circle.pieBK {
+        fill: #F18001 !important; 
+        background: #F18001 !important; 
+        stroke: #F18001;
+        stroke-width: 0;
+        
+        z-index: 9;
+    }
+    circle.pie {
     //    fill: lighten(#FF8325, 25);
         fill: #FFA926; 
     //    background: lighten(#FF8325, 25);
@@ -16581,6 +16725,7 @@ svg.chart {
     //    stroke-dasharray: 0 158;
         stroke-dasharray: 0 168;
         transition: stroke-dasharray .3s ease;
+        z-index: 11;
     }
 }
 .btnChart {
