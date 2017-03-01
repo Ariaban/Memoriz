@@ -1,0 +1,178 @@
+/*a[ ng-click ] {
+	color: red ;
+	cursor: pointer ;
+	text-decoration: underline ;
+}*/
+
+.modal ng-scope {
+    display: block;
+    background-color: rgba( 0, 0, 0, 0.8 );
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+}
+
+div.m-modals {
+    display: block;
+    background-color: rgba( 0, 0, 0, 0.8 );
+    font: 1em/1em Mirza,Tahoma,Verdana,Geneva,sans-serif,uicon;
+    bottom: 0px;
+    left: 0px;
+/*    position: fixed;*/
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*
+.m-modals:after {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    margin-left: -0.05em;
+    content: "";
+    -webkit-overflow-scrolling: touch;
+}
+*/
+
+    div.m-modals.ng-hide {
+        background-color: rgba( 0, 0, 0, 0 );
+    }
+
+    div.m-modals.ng-hide-add.ng-hide-add-active,
+    div.m-modals.ng-hide-remove.ng-hide-remove-active {
+        transition: 250ms ease all;
+    }
+
+    div.m-modals > .modal {
+        position: relative;
+/*        display: block;*/
+        display: block;
+        /*box-sizing: border-box;*/
+        max-width: 840px;
+        min-height: 0;
+/*        margin: 15% auto;*/
+        top: 29%;
+        padding: 15px;
+        -moz-transition: all .2s ease-out, opacity .2s ease-out;
+        -o-transition: all .2s ease-out, opacity .2s ease-out;
+        -webkit-transition: all .2s ease-out, opacity .2s ease-out;
+        transition: all .2s ease-out, opacity .2s ease-out;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+        color: #182a3c;
+        /*background: url('../images/remodalBk.jpg') center center no-repeat;*/
+        background: url('../images/remodalBk.jpg') center center no-repeat #f4f4f4;
+        /*background-clip: padding-box;*/
+        background-size: cover;
+        font: 1.2em/1em Mirza,Tahoma,Verdana,Geneva,sans-serif,uicon;
+        font-weight: 500;
+         line-height: 1.45 !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    .modal2 {
+        width: 20% !important;
+    }
+    .ModalLabel {
+        font: 1.2em/1em Yekan,Tahoma,Arial,Gadget,sans-serif,uicon;
+        color: #182a3c;
+        line-height: 30px;
+    }
+   .modal2 p {
+         font: 1.2em/1em Yekan,Tahoma,Arial,Gadget,sans-serif,uicon;
+         color: #182a3c;
+        line-height: 30px;
+    }
+    div.m-modals.ng-hide > .modal.ng-enter {
+        top: -200px;
+        transition: 250ms ease top;
+    }
+
+        div.m-modals.ng-hide > .modal.ng-enter.ng-enter-active {
+            top: 200px;
+        }
+
+a.jump {
+    color: #999999;
+}
+
+a.jump:hover {
+    background-color: gold;
+    color: #000000;
+}
+
+body.modal-is-active .modal {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media only screen and (min-width: 641px) {
+    .modal {
+        max-width: 480px;
+        min-height: 0;
+        margin: 20px auto;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+    }
+}
+
+.modal, .modal-wrapper:after {
+    vertical-align: middle;
+}
+
+.modal-wrapper {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: auto;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-wrapper:after {
+    display: inline-block;
+    height: 100%;
+    margin-left: -0.05em;
+    content: "";
+}
+
+/* Fix iPad, iPhone glitches */
+.modal-overlay,
+.modal-wrapper {
+    -webkit-transform: translateZ(0px);
+}
+
+/* Necessary styles of the modal dialog */
+.modal {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
