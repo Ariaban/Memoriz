@@ -28,6 +28,28 @@ $breakpoint-wide: 1440px;
     body {
         font-size: 1.15em/1em !important;
     }
+    .blockHeader {
+        .headerSlangPlace {
+            display: none;
+            visibility: hidden;
+        }
+        .headerBtnUserPlace {
+            $colWidth: 1% * ($columnWidth * 9) + ($columnGutter *(9 - 1));
+            width: $colWidth !important;
+        }
+        .headerSlang {
+            display: none;
+            visibility: hidden;
+        }
+        .blockHeaderBtnUser {
+            .btnMenuModeUser {
+                .txt {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
     .blockHeaderSlider {
         height: auto !important;
         min-height: 560px !important;
@@ -113,6 +135,22 @@ $breakpoint-wide: 1440px;
 //@media only screen and (max-width: $breakpoint-tablet) {
 @media screen and (min-width: 769px) and (max-width: 1027px) {  
     
+    .blockHeader {
+        .headerSlang {
+            .headerTxt {
+                display: none;
+                visibility: hidden;
+            }
+        }
+        .blockHeaderBtnUser {
+            .btnMenuModeUser {
+                .txt {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
     .blockHeaderSlider {
         padding-top: 45px !important;
     }

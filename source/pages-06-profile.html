@@ -169,7 +169,7 @@
                         <div class="col4 colM6 panelProfileHomePicPlace">
                             <div class="box inputfileProfilePlace">
                                 <input type="file" name="file-6[]" id="file-6" class="inputfileProfile" data-multiple-caption="{count} files selected" multiple="">
-                                <label for="file-6"><figure><div class="panelProfileHomePicAdd" style="background-image: url(images/userProfilePicOrangeAdd.jpg);"></div></figure></label>
+                                <label for="file-6"><figure><div class="panelProfileHomePicAdd" style="background-image: url(images/userProfilePicOrangeAdd.jpg);"><span class="loaderProfile"><img src="images/loaderProfile.gif"></span></div></figure></label>
                                 <div class="labelTxt">افزودن تصویر</div>
                             </div>
                         </div>
@@ -655,13 +655,48 @@
                                             <div class="col2 formInputLabelTitle">تعداد کارت جدید روزانه</div>
                                             <div class="col1">
                                                 <div class="pagingRowNoPlace">
-                                                    <select class="formInputDefault rowwNo">
-                                                        <option>10</option>
-                                                        <option>20</option>
-                                                        <option>30</option>
-                                                        <option>40</option>
+                                                    
+                                                    <div class="quantityProfile">
+                                                        <input class="formInputDefault" type="number" min="5" max="100" step="5" value="5">
+                                                    </div>
+                                                    
+                                                    <script>
+                                                    
+                                                        jQuery('<div class="quantityProfile-nav"><div class="quantityProfile-button quantityProfile-up">+</div><div class="quantityProfile-button quantityProfile-down">-</div></div>').insertAfter('.quantityProfile input');
+                                                        jQuery('.quantity').each(function() {
+                                                          var spinner = jQuery(this),
+                                                            input = spinner.find('input[type="number"]'),
+                                                            btnUp = spinner.find('.quantityProfile-up'),
+                                                            btnDown = spinner.find('.quantityProfile-down'),
+                                                            min = input.attr('min'),
+                                                            max = input.attr('max');
 
-                                                    </select>
+                                                          btnUp.click(function() {
+                                                            var oldValue = parseFloat(input.val());
+                                                            if (oldValue >= max) {
+                                                              var newVal = oldValue;
+                                                            } else {
+                                                              var newVal = oldValue + 1;
+                                                            }
+                                                            spinner.find("input").val(newVal);
+                                                            spinner.find("input").trigger("change");
+                                                          });
+
+                                                          btnDown.click(function() {
+                                                            var oldValue = parseFloat(input.val());
+                                                            if (oldValue <= min) {
+                                                              var newVal = oldValue;
+                                                            } else {
+                                                              var newVal = oldValue - 1;
+                                                            }
+                                                            spinner.find("input").val(newVal);
+                                                            spinner.find("input").trigger("change");
+                                                          });
+
+                                                        });
+                                                    
+                                                    </script>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
