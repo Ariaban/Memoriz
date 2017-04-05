@@ -1,0 +1,43 @@
+
+.gallery .control-button,
+.gallery .control-button:visited,
+.gallery .control-button:link {
+/*  color: #ccc;*/
+/*  color: rgba(255, 255, 255, 0.4);*/
+    color: #F5B451;
+}
+.gallery .control-button:hover {
+/*    background-color: rgba(255, 255, 255, 0.65) !important;*/
+    background-color: #EBE2D2;
+/*  color: white;*/
+/*  color: rgba(255, 255, 255, 0.8);*/
+    color: #FF8325;
+    cursor: pointer;
+}
+/*
+	Theme controls how everything looks in Gallery CSS.
+*/
+.gallery {
+    position: relative;
+}
+.gallery .item {
+    height: 480px;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent;
+}
+.gallery .controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.gallery .control-button {
+    display: inline-block;
+    margin: 0 .02em;
+    font-size: 3em;
+    text-align: center;
+    text-decoration: none;
+    transition: color .1s;
+}
+

@@ -55,7 +55,7 @@
 <notify-fix> <!-- notify-fix place show -->
 </notify-fix> <!-- /notify-fix place show -->
 
-<!--<section class="loader" style="display: none;">-->
+<!-- <section class="loader" style="display: none;"> -->
 <!--
 <section class="loader">
     <ul class="bokeh">
@@ -104,8 +104,32 @@
                             </li>
                             <li class="gnmenuItem">
                                 <a href="#">
+                                    <span class="icon" data-icon="&#xe05b;"></span>
+                                    <span class="gnmenuTxt">ایجاد دسته جدید</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
                                     <span class="icon" data-icon="&#xe39c;"></span>
                                     <span class="gnmenuTxt">دریافت مستقیم برنامه</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="j"></span>
+                                    <span class="gnmenuTxt">درباره ما</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe4d1;"></span>
+                                    <span class="gnmenuTxt">قوانین و مقررات</span>
+                                </a>
+                            </li>
+                            <li class="gnmenuItem">
+                                <a href="#">
+                                    <span class="icon" data-icon="&#xe0c8;"></span>
+                                    <span class="gnmenuTxt">تماس با ما</span>
                                 </a>
                             </li>
                             <li class="gnmenuItem">
@@ -332,6 +356,101 @@
     
 </div>
 
+<div class="remodal" data-remodal-id="modalDeckAdd">
+    
+    <div class="formTitleInModal">
+        <div class="">ایجاد دسته جدید</div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col3 formInputLabelInModalDefault">نام گروه جدید</div>
+        <div class="col5">
+            <input class="formInputDefaultW" type="text" placeholder="نام گروه">
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col3 formInputLabelInModalDefault">نام دسته جدید</div>
+        <div class="col5">
+            <input class="formInputDefaultW" type="text" placeholder="نام دسته">
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col3 formInputLabelInModalDefault">انتخاب تصویر دسته</div>
+        <div class="col5">
+            <div class="box">
+                <input type="file" name="file-6[]" id="file-6" class="inputfileProfile" data-multiple-caption="{count} files selected" multiple="">
+                <label for="file-6"><figure><div class="panelDeckPicAdd" style="background-image: url(images/itemImg.jpg);"><span class="loaderProfile"><img src="images/loaderProfile.gif"></span></div></figure></label>
+            </div>
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col3 formInputLabelInModalDefault">اضافه نمودن تگ</div>
+        <div class="col5">
+            <input class="formInputDefaultW" type="text" placeholder="نام تگ">
+        </div>
+    </div>
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col8 tagModel">
+            <ul >
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+                <li>
+                    <span class="tagModelItem">
+                        نام تگ
+                        <a href="#" class="tagModelItemDelete"><span class="icon" data-icon="&#xe036;"></span></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+        <div class="col2"></div>
+        <div class="col8">
+            <a href="#" class="btnPageOk btnColored">
+                <span class="txt"><span class="icon" data-icon="&#xe05b;"></span> ایجاد</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="row rowSpaceForm">
+    </div>
+    
+</div>
+
 <div class="row blockContentNew">
     
 <div class="limit">
@@ -486,11 +605,11 @@
             </div>
 -->
             
-            <div class="row contentPlace">
+            <div class="row contentPlaceHome">
                 <div class="col12">
                     
                     <div class="row rowHeader01Blue">
-                        <div class="col6 contentPlaceBtnPlace">
+                        <div class="col4 contentPlaceBtnPlace">
                             <div class="col contentPlaceDefaultHelp">
                                 <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
                                     <span class="icon" data-icon="&#xe145;"></span>
@@ -498,6 +617,14 @@
                             </div>
                             <div class="col contentPlaceTitleAbi">
                                 مجموعه کارت ‌های من
+                            </div>
+                        </div>
+                        <div class="col2 contentPlaceBtnPlace">
+                            <div class="row headerBtnPlace">
+                                <a href="#modalDeckAdd" class="btnDefault btnAbi">
+                                    <span class="icon" data-icon="&#xe05b;"></span>
+                                    <span class="txt">ایجاد دسته جدید</span>
+                                </a>
                             </div>
                         </div>
                         <div class="col3">
@@ -526,7 +653,7 @@
                     </div>
                     
 <!--
-                    <div class="row scroll-y">
+                    <div class="row">
                         <ul class="row bg-w">
                             
                             <div class="row listEmpty">
@@ -538,9 +665,8 @@
                     </div>
 -->
                     
-                    <div class="row scroll-y">
+                    <div class="row">
                         <ul class="row bg-w packItemInPlace">
-                            
                             <li class="col6">
                                 <div class="row packItemNew">
                                     <div class="ribbonNew"><span>عنوان</span></div>
@@ -703,314 +829,394 @@
                                     </div>
                                 </div>
                             </li>
-                            
-                            <a class="col12 btnDefault btnTosi">
-                                
-                                <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
-                                
-                            </a>
-                            
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6 colM12">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6 colM12">
+                                                    <a class="btnDefault btnWhiteToAbi">
+                                                        <span class="icon" data-icon="&#xe511;"></span>
+                                                        <span class="txt">یادگیری</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+
+                                                    <div class="overBtnPlaceTxt">این مرحله از یادگیری انجام شده است</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+
+                                                    <div class="overBtnPlaceTxt">این مرحله از یادگیری انجام شده است</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+
+                                                    <div class="overBtnPlaceTxt">این مرحله از یادگیری انجام شده است</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6 colM12">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6 colM12">
+                                                    <a class="btnDefault btnWhiteToAbi">
+                                                        <span class="icon" data-icon="&#xe511;"></span>
+                                                        <span class="txt">یادگیری</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+
+                                                    <div class="overBtnPlaceTxt">این مرحله از یادگیری انجام شده است</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col6">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew"><span>عنوان</span></div>
+                                    <div class="row">
+                                        <div class="col panelHomePackPic"><img src=""></div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">نام بسته</div>
+                                            <div class="row panelHomePackDesc2">
+                                                توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته توضیحات مرتبط با این بسته
+                                            </div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">۱۲۳</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                                <span class="panelHomePackTag"># تگ</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+                                            <div class="row">
+                                                <div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">جزییات</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+
+                                                    <div class="overBtnPlaceTxt">این مرحله از یادگیری انجام شده است</div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
-                        
                     </div>
-                    
-                    <div class="row rowHeader02Yellow">
-                        <div class="col6 contentPlaceBtnPlace">
-                            <div class="col contentPlaceDefaultHelp">
-                                <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
-                                    <span class="icon" data-icon="&#xe145;"></span>
-                                </a>
-                            </div>
-                            <div class="col contentPlaceTitleYellow">
-                                مجموعه کارت ‌های پیشنهادی
-                            </div>
-                        </div>
-                        <div class="col3">
-                            <div class="col2 inputSearchContentIcon">
-                                <span class="icon" data-icon="&#xe215;"></span>
-                            </div>
-                            <div class="col10 inputSearchContentPlace">
-                                <select class="inputSearchContent">
-                                    <option>آسان</option>
-                                    <option>سخت</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col3">
-                            <div class="col2 inputSearchContentIcon">
-                                <span class="icon" data-icon="&#xe1c6;"></span>
-                            </div>
-                            <div class="col10 inputSearchContentPlace">
-                                <input class="inputSearchContent" placeholder="جستجو">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row rowSelectHeader rowSelectHeaderDivider">
-                    </div>
-                    
-                    <div class="row scroll-y">
-                        <ul class="row bg-w packItemInPlace">
-                            
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">Aiton English Vocabulary - Sport Expressions</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">نام بسته</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">نام بسته</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">نام بسته</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col3">
-                                <div class="row packItemNew02">
-                                    <div class="row">
-                                        <div class="row panelHomePackPicFull"></div>
-                                        <div class="row">
-                                            <div class="row panelHomePackTitle">نام بسته</div>
-                                            <div class="row">
-                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
-                                                <span class="panelHomePackNo">۱۲۳</span>
-                                            </div>
-                                            <div class="row panelHomePackTagPlace">
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                                <span class="panelHomePackTag"># تگ</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="packItemNewOver02">
-
-                                        <div class="col4"></div>
-                                        <div class="col4">
-                                            <div class=" overBtnPlace">
-                                                <a class="col btnMenuModeSmall btnWhite">
-                                                    <span class="icon" data-icon="&#xe4ca;"></span>
-                                                </a>
-                                                <a class="col btnMenuModeSmall btnWhiteToY">
-                                                    <span class="icon" data-icon="&#xe4e7;"></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            
-                            <a class="col12 btnDefault btnTosi">
-                                
-                                <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
-                                
-                            </a>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                    
-                    
-                    
                     
                 </div>
             </div>
-            
-            
-            
         
     </div>
 </div>
-
+    
 <div class="limit">
     <div class="row block">
         <div class="col12 blockLFooterType">
@@ -1021,11 +1227,205 @@
 
 </div>
     
+<div class="full contentPlaceBottom">
+
+    <ul class="row packItemInPlaceBottom">
+        <li class="packItemBottom" id="aniItem01">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem02">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem03">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem04">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem05">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem06">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1)</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li class="packItemBottom" id="aniItem07">
+            <div class="row packItemNew02">
+                <div class="row">
+                    <div class="row panelHomePackPicFullBotton"></div>
+                    <div class="row">
+                        <div class="row panelHomePackTitle">آموزش زبان فرانسوی (Campus 1) +123456</div>
+                    </div>
+                </div>
+                <div class="packItemNewOver02">
+
+                    <div class=" overBtnPlace">
+                        <a class="col btnMenuModeSmall btnWhite">
+                            <span class="icon" data-icon="&#xe4ca;"></span>
+                        </a>
+                        <a class="col btnMenuModeSmall btnWhiteToY">
+                            <span class="icon" data-icon="&#xe4e7;"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+</div>
+    
 <script src="scripts/classie.js"></script>
 <!-- script src="scripts/mainSlide.js"></script> -->
 <script src="scripts/gnmenu.js"></script>
 <script>
     new gnMenu( document.getElementById( 'gn-menu' ) );
+</script>
+
+<script>
+    $(window).load(function() {
+        $('#aniItem01').delay(110).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem02').delay(160).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem03').delay(210).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem04').delay(260).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem05').delay(310).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem06').delay(360).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+        $('#aniItem07').delay(410).queue(function(){
+            $(this).addClass('slideDownEd');
+            $(this).dequeue()
+        });
+    });
 </script>
     
 </body>
