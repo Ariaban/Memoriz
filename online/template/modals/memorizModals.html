@@ -1,0 +1,519 @@
+﻿<div align="center" bn-modals
+     ng-show="subview"
+     class="m-modals"
+     ng-switch="subview">
+
+    <!-- BEGIN: Login Modal -->
+    <div ng-switch-when="loginModal"
+         ng-controller="loginModalCtrl"
+         class="modal">
+        <div class="">
+
+            <form name="loginFrm" id="loginFrm" ng-enter="login()" autocomplete="off">
+                <div class="formTitleInModal">
+                    <div class="">ورود</div>
+                </div>
+                <!--messageBox-->
+                <div class="row _messageBox  blockMessegeTypeInModal"></div>
+                <!--messageBox-->
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+                    <div class="col4">
+                        <input class="formInputDefaultW" type="text" placeholder="09XXXXXXXXX" tabindex="1" name="formUsername" id="formUsername"
+                               data-validation-field-length="11" autofocus
+                               data-validation-require="true" ng-model="userInfo.phone">
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+                    <div class="col4">
+                        <input class="formInputDefaultW" type="password" placeholder="کلمه عبور" tabindex="2" name="formPassword" id="formPassword"
+                               data-validation-require="true" ng-model="userInfo.password">
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col6">
+                        <a ng-click="login()" class="btnPageOk btnPageRecord">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">ورود</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openSetPasswordModal()" class="">آیا کلمه عبور خود را فراموش کرده اید؟</a>
+                    </div>
+
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openRegisterModal()" class="">آیا حساب کاربری ندارید؟</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: Login Modal -->
+    <!-- BEGIN: Register Modal -->
+    <div ng-switch-when="registerModal"
+         ng-controller="registerModalCtrl"
+         class="modal">
+        <div class="">
+
+            <form ng-enter="register()" id="registerFrm" name="registerFrm">
+                <div class="formTitleInModal">
+                    <div class="">عضویت</div>
+                </div>
+                <!--messageBox-->
+                <div class="row _messageBox  blockMessegeTypeInModal"></div>
+                <!--messageBox-->
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+                    <div class="col4">
+                        <input class="formInputDefaultW" type="text" data-fldName="شماره موبایل" placeholder="09XXXXXXXXX" name="formRegUsername" id="formRegUsername" data-validation-field-length="11"
+                               data-validation-require="true" ng-model="regUserInfo.phone" autofocus>
+                    </div>
+                </div>
+
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col6">
+                        <a ng-click="register()" class="btnPageOk btnPageRecord">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">عضویت</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openSetPasswordModal()" class="">آیا کلمه عبور خود را فراموش کرده اید؟</a>
+                    </div>
+
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openLoginModal()" class="">آیا حساب کاربری دارید؟</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: Register Modal -->
+    <!-- BEGIN: Set Password Modal -->
+    <div ng-switch-when="setPasswordModal"
+         ng-controller="setPasswordModalCtrl"
+         class="modal">
+        <div class="">
+
+           
+            <form id="forgPassFrm" name="forgPassFrm">
+                <div class="formTitleInModal">
+                    <div class="">بازیابی گذرواژه</div>
+                </div>
+                <!--messageBox-->
+                <div class="row _messageBox  blockMessegeTypeInModal"></div>
+                <!--messageBox-->
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe070;"></span></div>
+                    <div class="col4">
+                        <input autofocus class="formInputDefaultW" type="text" ng-model="forgPassObj.phone" placeholder="شماره موبایل" name="formResPassUsername" id="formResPassUsername" data-validation-field-length="11" data-validation-require="true">
+                    </div>
+                </div>
+
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col6">
+                        <a ng-click="setPassword()" class="btnPageOk btnPageRecord">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">بازیابی</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openLoginModal()" class="">آیا حساب کاربری دارید؟</a>
+                    </div>
+
+                    <div class="col4 formLinkInModal">
+                        <a ng-click="openRegisterModal()" class="">آیا حساب کاربری ندارید؟</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: Set Password Modal -->
+    <!-- BEGIN: second Modal. -->
+    <div ng-switch-when="packmodal"
+         ng-controller="packsCtrl"
+         class="modal">
+        <div class="">
+            <div class="row">
+                <div class="remodalContentDesc">
+                    <!--.لطفا برای استفاده از مجموعه کارتها یکی از بسته های زیر را تهیه نمایید-->
+                    .لطفا برای استفاده از مجموعه کارتها بسته زیر را تهیه نمایید
+                </div>
+
+                <div class="row scroll-y">
+                    <ul class="row bg-w">
+
+
+
+                        <li ng-repeat="packItem in packList" class="col12 packItemNew03" rel="tooltip"
+                            title="{{packItem.package.description}}">
+                            <div class="row">
+                                <div class="col1 panelHomePackPic _packInner"><div class="itemImgPackGold"></div></div>
+                                <div class="packItemHomeTxtPlace">
+                                    <div class="row panelHomePackTitle">{{packItem.package.name}}</div>
+                                    <div class="row panelHomePackDescNew">
+                                        {{packItem.package.description}}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col panelHomePackNoGreen">{{packItem.package.price}}</div>
+                                        <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackDescNew" ng-init="packDeckLismit = packItem.package.decks_limit !=='all' ? packItem.package.decks_limit : 'همه دسته ها'">تعداد :</span>
+                                        <span class="panelHomePackNo">{{packDeckLismit}}</span>
+                                        <span class="panelHomePackTag02">کد بسته: {{packItem.package.vas_code}}</span>
+                                        <!-- <span class="panelHomePackTag02">زبان</span>-->
+                                    </div>
+                                </div>
+
+                                <div class="packItemNewOver03">
+
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <a ng-show="!sessionUser" ng-click="openLoginModal()" class="btnDefault btnSabzExt">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">خرید</span>
+                                                </a>
+                                                <div class="overBtnPlaceTxt" ng-if="sessionUser && packItem.flag==1 && activationStat==='activeCredit'">بسته ویژه خریداری شده است</div>
+
+                                                <a ng-show="sessionUser && (packItem.flag==0 || activationStat!=='activeCredit')" id="btnBuyPackage_{{packItem.package._id}}" class="btnDefault {{packItem.package.btnCls}}" ng-click="buyPackage(packItem)">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">{{packItem.package.btnTxt}}</span>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BEGIN: Change Password Modal -->
+    <div ng-switch-when="changePasswordModal"
+         ng-controller="changePasswordModalCtrl"
+         class="modal">
+        <div class="">
+           
+            <form id="changePassFrm" name="changePassFrm">
+                <div class="formTitleInModal">
+                    <div class="">تغییر کلمه عبور</div>
+                </div>
+                <!--messageBox-->
+                <div class="row _messageBox  blockMessegeTypeInModal"></div>
+                <!--messageBox-->
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+                    <div class="col4">
+                        <input autofocus class="formInputDefaultW" ng-model="changPassObj.old_password" type="password" placeholder="کلمه عبور فعلی" name="formResPassUsername" id="formResPassUsername" data-validation-require="true">
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+                    <div class="col4">
+                        <input class="formInputDefaultW" type="password" ng-model="changPassObj.new_password" placeholder="کلمه عبور جدید" name="formResPassUsername" id="formResPassUsername" data-validation-require="true">
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col2 formInputLabelInModalIcon"><span class="icon" data-icon="&#xe062;"></span></div>
+                    <div class="col4">
+                        <input class="formInputDefaultW" type="password" ng-model="changPassObj.re_new_password" placeholder="تکرار کلمه عبور جدید" name="formResPassUsername" id="formResPassUsername" data-validation-require="true">
+                    </div>
+                </div>
+                <div class="row rowSpaceForm">
+                    <div class="col3"></div>
+                    <div class="col6">
+                        <a ng-click="changePassword()" class="btnPageOk btnPageRecord">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">تغییر کلمه عبور</span>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: Change Password Modal -->
+    <!-- BEGIN: Favorite Card Modal -->
+    <div ng-switch-when="memorizPublicConfirmDlg"
+         ng-controller="memorizPublicConfirmDlgCtrl"
+         class="modal">
+        <div class="">
+            <div class="formTitleInModalNote">
+                <div class="">{{title}}</div>
+            </div>
+
+            <div class="row rowSpaceForm">
+                <div class="col12 formDescInModal">
+                    {{dlg}}
+                </div>
+            </div>
+
+            <div class="row rowSpaceForm">
+                <div class="col3"></div>
+                <div class="col3">
+                    <a ng-click="submit()" class="btnPageOk btnSabz">
+                        <span class="icon" data-icon="&#xe042;"></span>
+                        <span class="txt">بله</span>
+                    </a>
+                </div>
+                <div class="col3">
+                    <a ng-click="close()" class="btnPageOk btnGhermez">
+                        <span class="icon" data-icon="&#xe042;"></span>
+                        <span class="txt">خیر</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Favorite Card Modal -->
+
+    <!-- BEGIN:  -->
+    <div ng-switch-when="memorizPublicConfirmBuyDlg"
+         ng-controller="memorizPublicConfirmBuyDlgCtrl"
+         class="modal">
+        <div class="">
+            <div class="formTitleInModalNote">
+                <div class="">{{title}}</div>
+            </div>
+
+            <div class="row rowSpaceForm">
+                <div class="col12 formDescInModal">
+                    {{dlg}}
+                </div>
+            </div>
+
+            <div class="row rowSpaceForm">
+                <div class="col3"></div>
+                <div class="col3">
+                    <a ng-click="submit()" class="btnPageOk btnSabz">
+                        <span class="icon" data-icon="&#xe042;"></span>
+                        <span class="txt">تایید</span>
+                    </a>
+                </div>
+                <div class="col3">
+                    <a ng-click="close()" class="btnPageOk btnGhermez">
+                        <span class="icon" data-icon="&#xe042;"></span>
+                        <span class="txt">انصراف</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END:  -->
+    <!-- BEGIN: Report Card Modal -->
+    <div ng-switch-when="reportCardModal"
+         ng-controller="reportCardModalCtrl"
+         class="modal">
+        <div class="">
+            <div class="remodalContentNew">
+                <form name="reportErrorForm">
+                    <div class="formTitleInModalNote">
+                        <div class="">گزارش خرابی به واحد پشتیبانی</div>
+                    </div>
+                    <div class="row rowSpaceForm">
+                        <div class="col12">
+                            <div class="remodalListForm">
+                                <div class="row rowSpaceFormNew">
+                                    <div class="col2 formInputLabelTitle">نوع مشکل</div>
+                                    <div class="col3">
+                                        <div class="pagingRowNoPlace">
+                                            <select ng-options="errorItem.description for errorItem in errorList track by errorItem.flag" data-validation-require="true" ng-model="selectedError" class="formInputDefault rowwNo">
+                                                <option selected disabled value=""> انتخاب </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row rowSpaceFormNew">
+                                    <div class="col2 formInputLabelTitle">توضیحات</div>
+                                    <div class="col10">
+                                        <input ng-enter="submit()" class="formInputDefault" ng-model="errorDescription" type="text" placeholder="توضیحات تکمیلی">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSpaceForm">
+                        <div class="col3"></div>
+                        <div class="col3">
+                            <a ng-click="submit()" class="btnPageOk btnSabz">
+                                <span class="icon" data-icon="&#xe042;"></span>
+                                <span class="txt">تایید</span>
+                            </a>
+                        </div>
+                        <div class="col3">
+                            <a ng-click="close()" class="btnPageOk btnGhermez">
+                                <span class="icon" data-icon="&#xe042;"></span>
+                                <span class="txt">انصراف</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Report Card Modal -->
+
+    <!-- BEGIN:  -->
+    <div ng-switch-when="memorizPublicBuyDlg"
+         ng-controller="memorizPublicBuyDlgCtrl"
+         class="modal">
+        <div class="">
+            <div class="formTitleInModalNote">
+                <div class="">{{title}}</div>
+            </div>
+
+            <div class="row rowSpaceForm">
+                <div class="col12 formDescInModal">
+                    {{dlg}}
+                </div>
+            </div>
+
+            <div class="row rowSpaceForm remodalContentNew">
+                <div class="row" ng-if="questionFlag">
+                    <div class="col3"></div>
+                    <div class="col3">
+                        <a ng-click="submit()" class="btnPageOk btnSabz">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">خرید از طریق همراه اول</span>
+                        </a>
+                    </div>
+                    <div class="col3">
+                        <a ng-click="shetab()" class="btnPageOk btnZard">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                            <span class="txt">خرید از طریق کارت شتاب</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" ng-if="!questionFlag">
+
+                    <div class="col4 " title="" rel="tooltip">
+                        <div class="row packItemNew03">
+                            <div class="row">
+                                <div class="row panelHomePackPicFull"><div class="itemImgPackGold"></div></div>
+                                <div class="row">
+                                    <div class="row panelHomePackTitle">بسته 1 ماهه</div>
+                                    <div class="row">
+                                        <div class="col panelHomePackNoGreen">12000</div>
+                                        <div class="col panelHomePackNoGreenTxt">تومان ماهانه</div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد :</span>
+                                        <span class="panelHomePackNo">همه کارت ها و بسته ها</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="packItemNewOver03">
+                                <div class="col6">
+                                    <div class="row overBtnPlace">
+                                        <div class="col12">
+                                            <a class="btnDefault btnSabzExt" href="#/buyIn">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">خرید</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col4 " title="" rel="tooltip">
+                        <div class="row packItemNew03">
+                            <div class="row">
+                                <div class="row panelHomePackPicFull"><div class="itemImgPackGold"></div></div>
+                                <div class="row">
+                                    <div class="row panelHomePackTitle">بسته 3 ماهه</div>
+                                    <div class="row">
+                                        <div class="col panelHomePackNoGreen">30000</div>
+                                        <div class="col panelHomePackNoGreenTxt">تومان ماهانه</div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد </span>
+                                        <span class="panelHomePackNo">همه کارت ها و بسته ها</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="packItemNewOver03">
+                                <div class="col6">
+                                    <div class="row overBtnPlace">
+                                        <div class="col12">
+                                            <a class="btnDefault btnSabzExt" href="#/buyIn">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">خرید</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col4 " title="" rel="tooltip">
+                        <div class="row packItemNew03">
+                            <div class="row">
+                                <div class="row panelHomePackPicFull"><div class="itemImgPackGold"></div></div>
+                                <div class="row">
+                                    <div class="row panelHomePackTitle">بسته 6 ماهه</div>
+                                    <div class="row">
+                                        <div class="col panelHomePackNoGreen">55000</div>
+                                        <div class="col panelHomePackNoGreenTxt">تومان ماهانه</div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد :</span>
+                                        <span class="panelHomePackNo">همه کارت ها و بسته ها</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="packItemNewOver03">
+                                <div class="col6">
+                                    <div class="row overBtnPlace">
+                                        <div class="col12">
+                                            <a class="btnDefault btnSabzExt" href="#/buyIn">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">خرید</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <!-- END:  -->
+
+
+</div>
+</div>
+

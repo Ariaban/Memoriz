@@ -1,0 +1,223 @@
+
+<div class="row blockContentNew">
+    <div class="limit">
+        <div class="row block">
+            <layout-profile></layout-profile>
+            <!--messageBox-->
+            <div class="row _messageBox"></div>
+            <!--messageBox-->
+
+            <div class="row contentPlace">
+                <div class="col12">
+                    <div class="row rowHeader01Blue">
+                        <div class="col9 contentPlaceBtnPlace">
+                            <div class="col contentPlaceDefaultHelp">
+                                <a class="btnMenuModeTransparent" title="اینجا مجموعه کارت  هایی که برای مطالعه انتخاب کردی رو ببین" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleAbi">
+                                مجموعه کارت ‌های من
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                                <span class="icon" data-icon="&#xe215;"></span>
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+
+                                <!--<select id="sel1" class="formInputDefault" ng-model="decksFilterList.value"
+                                            ng-change="getUserDecksList(0,decksFilterList.value)">
+                                        <option ng-repeat="filterItem in decksFilterList.values" value="{{filterItem.name}}">{{filterItem.p_name}}</option>
+                                    </select>-->
+
+                                <select id="sel1" class="inputSearchContent" ng-model="decksFilterList.value" ng-change="getUserDecksList(0,decksFilterList.value)">
+                                    <option value="favorite_decks">مجموعه کارت های فعال</option>
+                                    <option value="archive_decks">آرشیو</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+
+                    </div>
+                    <div class="row scroll-y">
+
+                        <section id="userDeckLoader" class="loaderModal">
+                            <!-- the component -->
+                            <ul class="bokeh">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                        </section>
+                        <ul class="row bg-w packItemInPlace">
+                            <div class="row listEmpty" ng-show="userDeckList.length===0">
+                                <img src="images/listEmpty.png">
+                            </div>
+
+                            <li class="col6" ng-repeat="userDeckItem in userDeckList" ng-show="userDeckList.length>0">
+                                <div class="row packItemNew">
+                                    <div class="ribbonNew" ng-if="activationStatus"><span>منقضی شده</span></div>
+                                    <div class="row _deckBack">
+                                        <div class="col panelHomePackPic">
+                                            <div class="itemImg" style="background-image:url({{deckImageSource}}{{userDeckItem.image}})"></div>
+                                        </div>
+                                        <div class="col5">
+                                            <div class="row panelHomePackTitle">{{userDeckItem.name}}</div>
+                                            <div class="row panelHomePackDesc2">{{userDeckItem.description}}</div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">{{userDeckItem.num_cards}}</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag" ng-repeat="tagItem in userDeckItem.tags"># {{tagItem}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col3 panelHomePackNoColored">
+
+                                            <div class="row">
+                                                <div rel="tooltip" title="تعداد کارت‌هایی که باید امروز برای اولین بار مطالعه کنید" class="col panelHomePackNoBlue">{{userDeckItem.num_new}}</div>
+                                                <div rel="tooltip" title="تعداد کارت‌هایی که قبلاً مطالعه کردید و امروز باید مرور نمایید" class="col panelHomePackNoRed">{{userDeckItem.num_review}}</div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver">
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col6" ng-if="!(!userDeckItem.flag && !userDeckItem.fav_flg)">
+                                                    <a class="btnDefault btnWhite" ng-click="decDetailUserDeck(userDeckItem)">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                    </a>
+                                                </div>
+                                                <div id="colFavLearn{{userDeckItem._id}}" class="col6">
+                                                    <div class="overBtnPlaceTxt" ng-if="userDeckItem.flag && userDeckItem.fav_flg && (userDeckItem.num_new == 0 && userDeckItem.num_review == 0)">{{scBtnNames._btnLearned}}</div>
+                                                    <a class="btnDefault btnWhiteToAbi" ng-if="userDeckItem.flag && userDeckItem.fav_flg && (userDeckItem.num_new !=0 || userDeckItem.num_review!=0)"
+                                                       ng-click="decLearn(userDeckItem,'panel')">
+                                                        <span class="icon" data-icon="&#xe511;"></span>
+                                                        <span class="txt">{{scBtnNames._btnGoToLearning}}</span>
+                                                    </a>
+                                                    <a id="btnFav{{pubDeckItem._id}}" class="btnDefault btnZard" ng-if="userDeckItem.flag && !userDeckItem.fav_flg" ng-click="decFavorite(userDeckItem,userDeckItem.packages,'userDeckMode')">
+                                                        <span class="icon" data-icon="&#xe4e7;"></span>
+                                                        <span class="txt">{{scBtnNames._btnAddToFavorite}}</span>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col12" ng-if="!userDeckItem.flag && !userDeckItem.fav_flg">
+                                                    <a class="btnDefault btnWhite" ng-click="decDetailUserDeck(userDeckItem)">
+                                                        <span class="icon" data-icon="&#xe4ca;"></span>
+                                                        <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <a id="btnMoreDeck" ng-show="user_deck_page_no_ends && userDeckList.length>0" class="col12 btnDefault btnTosi _deckBack"
+                       ng-click="getUserDecksList((userDecksCurrentPageNumber + 1),decksFilterList.value)">
+                        <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> {{scBtnNames._btnMore}}</span>
+                    </a>
+                    <div class="row rowHeader02Yellow">
+                        <div class="col6 contentPlaceBtnPlace">
+                            <div class="col contentPlaceDefaultHelp">
+                                <a class="btnMenuModeTransparent" title="اینجا مجموعه کارت  های پیشنهادی ما رو ببین" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleYellow">
+                                مجموعه کارت ‌های پیشنهادی
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+
+                    <div class="row scroll-y">
+
+                        <section id="publicDeckLoader" class="loaderModal">
+                            <!-- the component -->
+                            <ul class="bokeh">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                        </section>
+                        <ul class="row bg-w packItemInPlace">
+                            <div class="row listEmpty" ng-show="publicDeckList.length===0">
+                                <img src="images/listEmpty.png">
+                            </div>
+                            <li class="col3" ng-repeat="pubDeckItem in publicDeckList" ng-if="publicDeckList.length>0">
+                                <div class="row packItemNew02">
+                                    <div class="row">
+                                        <div class="row panelHomePackPicFull">
+                                            <div class="itemImg" style="background-image:url({{deckImageSource}}{{pubDeckItem.image}})"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="row panelHomePackTitle">{{pubDeckItem.name}}</div>
+
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">{{pubDeckItem.num_cards}}</span>
+                                            </div>
+                                            <div class="row panelHomePackTagPlace">
+                                                <span class="panelHomePackTag" ng-repeat="pubTagItem in pubDeckItem.tags"># {{pubTagItem}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="packItemNewOver02">
+                                        <div class="col5" ng-if="!pubDeckItem.flag && !pubDeckItem.fav_flg"></div>
+                                        <div class="col1" ng-if="!pubDeckItem.flag && !pubDeckItem.fav_flg">
+                                            <div class="overBtnPlace">
+                                                <a ng-if="!pubDeckItem.flag && !pubDeckItem.fav_flg" class="col btnMenuModeSmall btnWhite" ng-click="decDetail(pubDeckItem)">
+                                                    <span class="icon" data-icon="&#xe4ca;"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col4" ng-if="!(!pubDeckItem.flag && !pubDeckItem.fav_flg)"></div>
+                                        <div class="col4" ng-if="!(!pubDeckItem.flag && !pubDeckItem.fav_flg)">
+                                            <div class="overBtnPlace">
+
+                                                <a ng-if="pubDeckItem.flag && !pubDeckItem.fav_flg" class="col btnMenuModeSmall btnWhite" ng-click="decDetail(pubDeckItem)">
+                                                    <span class="icon" data-icon="&#xe4ca;"></span>
+                                                </a>
+                                                <a ng-if="pubDeckItem.flag && !pubDeckItem.fav_flg" id="btnFav{{pubDeckItem._id}}" class="col btnMenuModeSmall btnWhiteToY"
+                                                   ng-click="decFavorite(pubDeckItem,pubDeckItem.packages,'pubDeckMode')">
+                                                    <span class="icon" data-icon="&#xe4e7;"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>
+<script src="controller/panelCtrl.js"></script>

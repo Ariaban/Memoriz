@@ -1,0 +1,262 @@
+<script src="controller/groupsCtrl.js"></script>
+<!--messageBox-->
+<div class="row _messageBox"></div>
+<!--messageBox-->
+<div class="row blockContentNew">
+    <div class="limit">
+        <div class="row block">
+            <ul class="packCatFilteringPlace _catPlaceContainer">
+                <li class="packCatFiltering select" id="allCat" ng-click="selectSampCat('all')">
+                    <div class="packCatFilteringTitleIcon"><img src="images/flag-all.svg" width="65px"></div>
+                    <div class="packCatFilteringTitle">همه</div>
+                </li>
+                <li class="packCatFiltering" ng-repeat="grpItem in sampleCat" id="{{grpItem.catInfo._id}}" ng-click="selectSampCat(grpItem)">
+                    <div class="packCatFilteringTitleIcon">
+                        <img src="{{catImageSource}}{{grpItem.catInfo.image}}" width="65px">
+                        <!--<span class="icon" data-icon="&#xe2f2;"></span>-->
+                    </div>
+                    <div class="packCatFilteringTitle">{{grpItem.catInfo.name}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="limit">
+        <div class="row block">
+            <div class="row">
+                <div class="rowSelectDefault">
+                    <div class="col3 search-filter">
+                        <ul>
+                            <li class="parent-Cat" ng-repeat="catItem in allCategory">
+                                <h1 class="heading">{{catItem.catName}}</h1>
+
+                                <ul class="Category">
+                                    <!--<li ng-repeat="catItemTag in catItem.tag" ng-click="searchBuyLevel1Tag(catItem , catItemTag,$event)">-->
+                                    <li ng-repeat="catItemTag in catItem.tag">
+                                        <a class="parent-layer2">
+                                            <span class="txt">{{catItemTag.grp}}</span>
+                                            <!--<span class="number">({{catItemTag.count}})</span>-->
+                                        </a>
+                                        <ul class="child">
+                                            <li ng-repeat="catItemChild in catItemTag.childs" id="{{catItemChild._id}}" ng-show="catItemChild.showFlg" ng-click="searchBuyLevel2Tag(catItem ,catItemTag, catItemChild,$event)">
+                                                <a href="" class="catItemChild {{catItemChild.childItemCls}}">
+                                                    <span class="txt">{{catItemChild.name}}</span>
+                                                </a>
+                                            </li>
+                                            <li ng-click="showMoreCatTag('show',catItem,catItemTag,$event)" ng-show="catItemTag.catItemTagFlg">
+                                                <a class="more" href=""><i class="icon icon-plus"></i>بیشتر</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col9">
+                        <div class="content-filter-topbar">
+
+                            <div class="row">
+                                <div class="col6 site-map">
+                                    <ul>
+                                        <li>{{selectedTags.selectedFirstTag}}</li>
+                                        <li class="sep" ng-if="selectedTags.selectedSecondTag">
+                                            <img src="images/patharrow.png" alt="">
+                                        </li>
+                                        <li>{{selectedTags.selectedSecondTag}}</li>
+                                        <li class="sep" ng-if="selectedTags.selectedThirdTag">
+                                            <img src="images/patharrow.png" alt="">
+                                        </li>
+                                        <li>{{selectedTags.selectedThirdTag}}</li>
+                                    </ul>
+                                </div>
+                                <div class="col6">
+                                    <div class="col2 inputSearchContentIcon">
+                                        <span class="icon" data-icon="&#xe1c6;"></span>
+                                    </div>
+                                    <div class="col10 inputSearchContentPlace">
+                                        <input class="inputSearchContent" ng-model="searchData.search" placeholder="جستجو" ng-enter="searchInTagsInp()">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row filter-select">
+                                <div class="col6">
+                                    <div class="row">
+                                        <div class="col4">
+                                            <div class="dropdownDefaultT">
+                                                <select class="formInputDefaultT" ng-model="searchData.filters.sound" ng-change="searchInTagsDrop()">
+                                                    <option selected value="">صدا دار / بی صدا </option>
+                                                    <option value="1">صدادار</option>
+                                                    <option value="0">بی صدا</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col4">
+                                            <div class="dropdownDefaultT">
+                                                <select class="formInputDefaultT" ng-model="searchData.filters.image" ng-change="searchInTagsDrop()">
+                                                    <option selected value="">عکسدار / بدون عکس </option>
+                                                    <option value="1">عکسدار</option>
+                                                    <option value="0">بدون عکس</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col6">
+                                    <div class="result-counts">
+                                        <span><strong>{{currentSampleCat.deck_num}}</strong> دسته</span>
+                                        <span><strong>{{currentSampleCat.catInfo.cards_num}}</strong> کارت </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="filter-tag">
+                                <ul>
+                                    <li ng-repeat="detailTagItem in detailTagItems">
+                                        <span class="filter-tag-item">
+                                            {{detailTagItem.name}}
+                                            <a class="icon" data-icon="" ng-click="removeTag(detailTagItem)"></a>
+                                        </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row content-filter">
+                            <div class="row block">
+                                <ul class="row packItemHomePlace">
+                                    <div class="row listEmpty" ng-show="deckListResult.length===0">
+                                        <img src="images/listEmpty.png">
+                                    </div>
+
+                                    <li class="col12" ng-repeat="userDeckItem in deckListResult" ng-show="deckListResult.length>0" id="{{userDeckItem._id}}">
+                                        <div class="row packItemHome">
+                                            <div class="ribbonNew" ng-if="activationStatus"><span>منقضی شده</span></div>
+                                            <!--<div class="row _deckBack">-->
+                                            <div class="panelHomePackPic">
+                                                <div class="itemImg" style="background-image:url({{deckImageSource}}{{userDeckItem.image}})"></div>
+                                            </div>
+                                            <div class="packItemHomeTxtPlaceLarge">
+                                                <div class="row panelHomePackTitle">
+                                                    <div class="col">{{userDeckItem.name}}</div>
+                                                    <div class="col RankRowResultInItem">
+                                                        <fieldset class="starability-basic-s">
+                                                            <label ng-class="(userDeckItem.rank_info.rank_avg>=5) ? 'check' :''">5 stars, amazing.</label>
+                                                            <label ng-class="(userDeckItem.rank_info.rank_avg>=4) ? 'check' :''">4 stars, very good.</label>
+                                                            <label ng-class="(userDeckItem.rank_info.rank_avg>=3) ? 'check' :''">3 stars, average.</label>
+                                                            <label ng-class="(userDeckItem.rank_info.rank_avg>=2) ? 'check' :''">2 stars, not good.</label>
+                                                            <label ng-class="(userDeckItem.rank_info.rank_avg>=1) ? 'check' :''">1 star, terrible.</label>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                                <div class="row panelHomePackDesc2">{{userDeckItem.description}}</div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                        <span class="panelHomePackNo">{{userDeckItem.num_cards}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row panelHomePackTagPlace" ng-if="userDeckItem.tags.length>0">
+                                                    <span class="panelHomePackTag"  ng-repeat="tagItem in userDeckItem.tags">#{{tagItem}}</span>
+                                                </div>
+                                            </div>
+                                            <!--<div class="col3 panelHomePackNoColored">
+
+                                                <div class="row">
+                                                    <div rel="tooltip" title="تعداد کارت‌هایی که باید امروز برای اولین بار مطالعه کنید" class="col panelHomePackNoBlue">{{userDeckItem.num_new}}</div>
+                                                    <div rel="tooltip" title="تعداد کارت‌هایی که قبلاً مطالعه کردید و امروز باید مرور نمایید" class="col panelHomePackNoRed">{{userDeckItem.num_review}}</div>
+
+                                                </div>
+                                            </div>-->
+                                            <!--</div>-->
+                                            <div class="packItemHomeOver">
+                                                <div class="col3"></div>
+                                                <div class="col6">
+                                                    <div class="row overBtnPlace">
+                                                        <div class="col6" ng-if="!(!userDeckItem.flag && !userDeckItem.fav_flg)">
+                                                            <a class="btnDefault btnWhite" ng-click="decDetailUserDeck(userDeckItem)">
+                                                                <span class="icon" data-icon="&#xe4ca;"></span>
+                                                                <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="colFavLearn{{userDeckItem._id}}" class="col6">
+                                                            <div class="overBtnPlaceTxt" ng-if="userDeckItem.flag && userDeckItem.fav_flg && (userDeckItem.num_new == 0 && userDeckItem.num_review == 0)">{{scBtnNames._btnLearned}}</div>
+                                                            <a class="btnDefault btnWhiteToAbi" ng-if="userDeckItem.flag && userDeckItem.fav_flg && (userDeckItem.num_new !=0 || userDeckItem.num_review!=0)"
+                                                               ng-click="decLearn(userDeckItem,'panel')">
+                                                                <span class="icon" data-icon="&#xe1bb;"></span>
+                                                                <span class="txt">{{scBtnNames._btnGoToLearning}}</span>
+                                                            </a>
+                                                            <a id="btnFav{{pubDeckItem._id}}" class="btnDefault btnWhiteToY" ng-if="userDeckItem.flag && !userDeckItem.fav_flg" ng-click="decFavorite(userDeckItem,userDeckItem.packages,'userDeckMode')">
+                                                                <span class="icon" data-icon="&#xe4e7;"></span>
+                                                                <span class="txt">{{scBtnNames._btnAddToFavorite}}</span>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="col12" ng-if="!userDeckItem.flag && !userDeckItem.fav_flg">
+                                                            <a class="btnDefault btnWhite" ng-click="decDetailUserDeck(userDeckItem)">
+                                                                <span class="icon" data-icon="&#xe4ca;"></span>
+                                                                <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <div class="content-filterPagingPlace">
+                                    <div class="pagingCompFooter" ng-if="deckListResult.length">
+                                        <div class="pagingNoRecPlace">
+                                            <span class="noRecTxt">تعداد کل  صفحات: </span>
+                                            <span class="noRecAll">{{number_of_pages}}</span>
+                                        </div>
+                                        <div class="pagingPagesPlace">
+                                            <ul class="paging">
+                                                <li class="arrowRight" ng-if="currentPage>1">
+                                                    <a ng-click="setCurrent(currentPage-1)"><span class="icon" data-icon="&#xe128;"></span></a>
+                                                </li>
+                                                <li ng-repeat="page in pages" ng-class="page-1 == (currentPage) ? 'select' : ''">
+                                                    <a ng-click="setCurrent(page-1)">{{page}}</a>
+                                                </li>
+                                                <li class="arrowLeft" ng-if="number_of_pages>5">
+                                                    <a ng-click="setCurrent(currentPage+1)"><span class="icon" data-icon="&#xe129;"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="pagingBlockLeftPlace">
+                                            <div class="pagingRowNoPlace">
+                                                <select class="formInputDefault rowwNo"
+                                                        ng-init="x.pageSize = 10"
+                                                        ng-model="x.pageSize"
+                                                        ng-change="changePageSize(x.pageSize)">
+                                                    <option>10</option>
+                                                    <option>20</option>
+                                                    <option>50</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>

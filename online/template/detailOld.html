@@ -1,0 +1,438 @@
+
+<script src="controller/detailCtrl.js"></script>
+
+<div class="row blockContentNew">
+    <div class="limit">
+        <div class="row block">
+            <!--messageBox-->
+            <div class="row _messageBox"></div>
+            <!--messageBox-->
+            <div class="row contentPlace">
+                <div class="col12">
+                    <div class="row rowHeader01">
+                        <div class="col7 contentPlaceBtnPlace">
+                        </div>
+                        <div class="col5">
+                            <div class="col4 headerBtnPlace"></div>
+
+                            <div class="col4 headerBtnPlace">
+                                <a ng-click="decRemoveFavorite()" ng-if="sessionUser && buyDeckFlag && isFavorite" class="btnDefault btnGhermez">
+                                    <span class="txt">{{scBtnNames._btnRemoveFavorite}}</span>
+                                    <span class="icon" data-icon="&#xe087;"></span>
+                                </a>
+
+                                <!--<a ng-click="decLearn(deckInfo,'detail')" ng-if="sessionUser && buyDeckFlag==1 && isFavorite==1" class="btnDefault btnAbi">
+                                    <span class="icon" data-icon="&#xe1bb;"></span>
+                                    <span class="txt">شروع یادگیری</span>
+                                </a>
+                                <a ng-click="decFavorite()" ng-if="sessionUser && buyDeckFlag==1 && isFavorite==0" class="btnDefault btnGold">
+                                    <span class="txt"><span class="icon" data-icon="&#xe1bb;"></span>افزودن به علاقه‌مندی‌ها</span>
+                                </a>
+                                <a ng-click="buyDeck()" ng-if="sessionUser && buyDeckFlag==0" class="btnDefault btnSabz">
+                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                    <span class="txt">خرید</span>
+                                </a>-->
+                            </div>
+                            <div class="col4 headerBtnPlace">
+                                <a class="btnDefault btnTosiNew" ng-click="backBtn()">
+                                    <span class="icon" data-icon="&#xe052;"></span>
+                                    <span class="txt">بازگشت</span>
+                                </a>
+                                <!--<a class="btnDefault btnTosiNew" ng-click="backBtn()" ng-if="!sessionUser">
+                                    <span class="icon" data-icon="&#xe052;"></span>
+                                    <span class="txt">بازگشت</span>
+                                </a>-->
+                            </div>
+                            <!--<div class="col4 headerBtnPlace">
+                                <a class="btnDefault btnTosi">
+                                    <span class="icon" data-icon="2"></span>
+                                    <span class="txt">بازی</span>
+                                </a>
+                            </div>
+                            <div class="col4 headerBtnPlace">
+                                <a class="btnDefault btnTosi">
+                                    <span class="icon" data-icon=","></span>
+                                    <span class="txt">کپی مجموعه کارت </span>
+                                </a>
+                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="row rowSelectHeader rowSelectHeaderDividerSpace">
+                    </div>
+
+                    <div class="row menuTab">
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <label for="tab1"><span class="icon" data-icon=""></span>توضیحات</label>
+                        <!--<input id="tab2" type="radio" name="tabs">
+                        <label for="tab2"><span class="icon" data-icon=""></span>تنظیمات آزمون</label>
+                        <input id="tab3" type="radio" name="tabs">
+                        <label for="tab3"><span class="icon" data-icon=""></span>تنظیمات یادگیری</label>
+                        <input id="tab4" type="radio" name="tabs">
+                        <label for="tab4"><span class="icon" data-icon=""></span>تاریخچه</label>-->
+                        <!--<input id="tab5" type="radio" name="tabs">
+                        <label for="tab5"><span class="icon" data-icon=""></span>کارت ها</label>-->
+                        <section id="content1">
+                            <div class="row itemSpace">
+                                <div class="col8">
+                                    <div class="row panelDetailsPackItem fadeLoad">
+                                        <div class="ribbonNew" ng-show="activationStatus && sessionUser"><span>منقضی شده</span></div>
+                                        <div class="col panelHomePackPic">
+                                            <div class="itemImg" style="background-image:url({{deckImageSource}}{{deckInfo.image}})"></div>
+                                        </div>
+                                        <div class="col4">
+                                            <div class="row panelHomePackTitle">{{deckInfo.name}}</div>
+                                            <div class="row panelHomePackDesc2">{{deckInfo.description}}</div>
+                                            <div class="row">
+                                                <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                                <span class="panelHomePackNo">{{deckInfo.num_cards}}</span>
+                                            </div>
+                                            <div class="row">
+                                                <!--<span class="panelHomePackTag">تگ ها:</span>-->
+                                                <!--<span class="panelHomePackTag">زبان</span>
+                                                <span class="panelHomePackTag">لغت</span>
+                                                <span class="panelHomePackTag">گرامر</span>-->
+                                            </div>
+                                        </div>
+                                        <div class="col4 panelHomePackNoColored">
+                                            <div ng-if="sessionUser && buyDeckFlag && isFavorite" class="row">
+                                                <div class="col panelHomePackNoBlue">
+                                                    <div rel="tooltip" title="تعداد کارت‌هایی که باید امروز برای اولین بار مطالعه کنید">{{currentDeckNum.num_new}} </div>
+                                                </div>
+                                                <div class="col panelHomePackNoRed">
+                                                    <div rel="tooltip" title="تعداد کارت‌هایی که قبلاً مطالعه کردید و امروز باید مرور نمایید">{{currentDeckNum.num_review}} </div>
+                                                </div>
+                                                <!--<div class="col panelHomePackNoBlue">۱۰</div>
+                                                <div class="col panelHomePackNoRed">۲۳</div>-->
+                                            </div>
+                                            <!--<div ng-if="buyDeckFlag==0" class="row">
+                                                <div class="col panelHomePackNoGreenTxt">{{deckInfo.price}}</div>
+                                                <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <div class="row panelDetailsPackDescPlace">
+                                        <div class="panelDetailsPackDesc">
+
+                                            <!--لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.-->
+                                            {{deckInfo.description}}
+
+                                        </div>
+                                        <!--<div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>-->
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col12" ng-if="!activationStatus">
+                                            <a ng-click="decLearn(deckInfo,'detail')" ng-if="sessionUser && buyDeckFlag && isFavorite && (currentDeckNum.num_new!=0 || currentDeckNum.num_review !=0)" class="btnDefault btnAbi fadeLoad">
+                                                <span class="txt">{{scBtnNames._btnGoToLearning}}</span>
+                                                <span class="icon" data-icon="&#xe1bb;"></span>
+                                            </a>
+                                            <a ng-click="decFavorite()" ng-if="!isFavorite" class="btnDefault btnGold fadeLoad">
+                                                <span class="txt"><span class="icon" data-icon="&#xe01a;"></span>{{scBtnNames._btnAddToFavorite}}</span>
+                                            </a>
+                                            <!--<a ng-click="decFavorite()" ng-if="sessionUser && buyDeckFlag && !isFavorite" class="btnDefault btnGold fadeLoad">
+                                                <span class="txt"><span class="icon" data-icon="&#xe01a;"></span>{{scBtnNames._btnAddToFavorite}}</span>
+                                            </a>
+                                                <a id="btnBuy" ng-click="buyDeck()" ng-if="sessionUser && !buyDeckFlag" class="btnDefault btnSabz">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">{{scBtnNames._btnBuyDeck}}</span>
+                                            </a>-->
+
+
+                                        </div>
+                                        <div class="col12" ng-if="activationStatus && sessionUser">
+                                            <a id="btnBuy" ng-click="buyDeck()" class="btnDefault btnSabz">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">{{scBtnNames._btnBuyDeck}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="col12" ng-if="activationStatus && !sessionUser">
+                                            <a id="btnBuy" ng-click="openLoginModal()" class="btnDefault btnSabz">
+                                                <span class="icon" data-icon="&#xe0f0;"></span>
+                                                <span class="txt">{{scBtnNames._btnBuyDeck}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="desCardPlace" class="col4 cardPlace">
+                                    <div id="desTabPreviewDeckCards" class="row cardPlaceLev">
+                                        <div class="flip-container" id="flip-toggle">
+                                            <div class="flipper">
+                                                <div class="front fadeLoad">
+                                                    <!-- front content -->
+                                                    <div class="cardItem" style="overflow: auto;">
+                                                        <div id="frontContainer">
+                                                            <!--<img id="fImg" ng-if="hasFrontImage" class="flashCardLearnPic" style="width: 250px" src="{{imagesSource}}{{currentCard.front_img}}" alt="" />-->
+                                                            <!--<img id="fImg" my-src="{{imagesSource}}{{currentCard.front_img}}" style="width: 250px" ng-show="hasFrontImage" class="flashCardLearnPic" alt="" />-->
+                                                            <!--<pre id="preFront">
+                                                            {{currentCard.front}} </pre>-->
+                                                            <div id="preFront" ng-bind-html='toTrustedHTML(currentCard.front)'></div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <!-- back content -->
+                                                        <!--<div id="audioBox" style="cursor: pointer; position:absolute; top:395px; left:20px; z-index:1000; width: 40px; height:40px" onclick="document.getElementById('player').play()">
+                                                            <audio id="player" src=""></audio>
+                                                            <img src="images/sound2.svg" />
+                                                        </div>-->
+                                                        <div id="backContainer" style="overflow: auto;" class="cardItemBack">
+                                                            <!--<img ng-show="hasImage" class="flashCardLearnPic" src="{{imagesSource}}{{currentCard.img}}" alt="" />-->
+                                                            
+
+                                                            <!--   <img id="bImg" my-src="{{imagesSource}}{{currentCard.img}}" ng-show="hasImage" class="flashCardLearnPic" alt="" />-->
+                                                            <!--<pre id="preBack"> {{currentCard.back}} </pre>-->
+                                                            <div id="preBack" ng-bind-html='toTrustedHTML(currentCard.back)'></div>
+                                                            <!--<div id="backContent">
+                                                            </div>-->
+                                                            <br />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row cardItemBtnPlace">
+                                            <div class="col6 cardItemBtnGroup">
+
+                                                <a id="btnPrev" ng-click="frontFlip('#flip-toggle'); previousCard('#desCardPlace')" class="col cardItemBtn"><span class="icon" data-icon="&#xe247;"></span></a>
+                                                <a ng-click="toggleFlip('#flip-toggle')" class="col cardItemBtn"><span class="icon" data-icon="&#xe029;"></span></a>
+                                                <a id="btnNext" ng-click="frontFlip('#flip-toggle'); nextCard('#desCardPlace');" class="col cardItemBtn"><span class="icon" data-icon="&#xe248;"></span></a>
+                                            </div>
+                                            <div class="col6 cardItemBtnDesc">
+                                                (پیش نمایش کارت ها)
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </section>
+                        <section id="content2">
+                            <div class="row itemSpace">
+                                content2
+                            </div>
+                        </section>
+                        <section id="content3">
+                            <div class="row itemSpace">
+                                content3
+                            </div>
+                        </section>
+                        <section id="content4">
+                            <div class="row itemSpace">
+                                content4
+                            </div>
+                        </section>
+                        <section id="content5">
+                            <div class="row itemSpace">
+
+
+
+
+
+                                <div class="col4">
+
+
+
+                                    <div class="row">
+                                        <div class="panelHomePackTitle">{{deckInfo.name}}</div>
+                                    </div>
+
+                                    <div class="row panelHomePackDesc">{{deckInfo.description}}</div>
+                                    <div class="row">
+                                        <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                        <span class="panelHomePackNo">{{deckInfo.num_cards}}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="panelHomePackTag">تگ ها:</span>
+                                        <!--<span class="panelHomePackTag">زبان</span>
+                                        <span class="panelHomePackTag">لغت</span>
+                                        <span class="panelHomePackTag">گرامر</span>-->
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackLabel">لیبل اضافه</span>
+                                            <span class="panelHomePackDescInput">توضیحات فیلد مرتبط</span>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <!--<div class="col4 cardPlace">
+
+                                    <div id="cardsTabPreviewDeckCards" class="row cardPlaceLev">
+                                        <div class="flip-container" id="flip-toggle">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <div class="cardItem">
+                                                        <div id="frontContainer" style="font-family:'Yekan'; overflow: auto;">
+                                                            <img id="fImg" ng-if="hasFrontImage" class="flashCardLearnPic" style="width: 250px" src="{{imagesSource}}{{currentCard.front_img}}" alt="" />
+                                                            <pre id="preFront"> {{currentCard.front}} </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="back">
+                                                    <div id="audioBox" style="cursor: pointer; position:absolute; top:395px; left:20px; z-index:1000; width: 40px; height:40px" onclick="document.getElementById('player').play()">
+                                                        <audio id="player" src=""></audio>
+                                                        <img src="images/sound2.svg" />
+                                                    </div>
+                                                    <div id="backContainer" style="overflow: auto; font-family:'Yekan';" class="cardItemBack">
+                                                        <img ng-if="hasImage" class="flashCardLearnPic" src="{{imagesSource}}{{currentCard.img}}" alt="" />
+                                                        <pre id="preBack"> {{currentCard.front}} </pre>
+                                                        <div id="backContent">
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row cardItemBtnPlace" style="z-index:1">
+                                        <div class="cardItemBtnGroup">
+
+                                            <a id="btnPrev" ng-click="frontFlip('#flip-toggle'); previousCard('#flip-toggle')" class="col cardItemBtn"><span class="icon" data-icon="&#xe247;"></span></a>
+                                            <a ng-click="toggleFlip('#flip-toggle')" class="col cardItemBtn"><span class="icon" data-icon="&#xe029;"></span></a>
+                                            <a id="btnNext" ng-click="frontFlip('#flip-toggle'); nextCard('#flip-toggle');" class="col cardItemBtn"><span class="icon" data-icon="&#xe248;"></span></a>
+                                        </div>
+                                    </div>
+
+                                </div>-->
+
+                                <div class="col1"></div>
+                                <div class="col2 contentPlaceBtnDetails">
+
+                                    <a class="btnDefault03 btnAbi">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">ویرایش کارت</span>
+                                    </a>
+                                    <a class="btnDefault03 btnSabz">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">افزودن کارت</span>
+                                    </a>
+                                    <a class="btnDefault03 btnGhermez">
+                                        <span class="icon" data-icon="&#xe05b;"></span>
+                                        <span class="txt">حذف کارت</span>
+                                    </a>
+
+                                </div>
+
+
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row rowHeader02">
+                        <div class="col6 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="اینجا لیست بسته های ویژه ما رو ببین" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleSabz">
+                                خرید بسته های ویژه
+                            </div>
+                        </div>
+                        <div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                            </div>
+                        </div>
+
+                        <div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+                    <!--<div class="row scroll-y02">-->
+                    <div class="row">
+                        <ul class="row bg-w">
+
+                            <li ng-repeat="packItem in packList" class="col6" rel="tooltip"
+                                title="{{packItem.package.description}}">
+                                <div class="row packItemNew03">
+                                    <div class="panelHomePackPic"><div class="itemImgPackGold"></div></div>
+                                    <div class="packItemHomeTxtPlace">
+                                        <div class="row panelHomePackTitle">{{packItem.package.name}}</div>
+                                        <div class="row panelHomePackDesc2">
+                                            {{packItem.package.description}}
+                                        </div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">{{packItem.package.price}}</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc" ng-init="packDeckLismit = packItem.package.decks_limit !=='all' ? packItem.package.decks_limit : 'همه مجموعه کارت  ها'">تعداد :</span>
+                                            <span class="panelHomePackNo">{{packDeckLismit}}</span>
+                                            <span class="panelHomePackTag02">کد بسته: {{packItem.package.vas_code}}</span>
+                                            <!-- <span class="panelHomePackTag02">زبان</span>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="packItemNewOver03">
+
+                                        <div class="col2"></div>
+                                        <div class="col8">
+                                            <div class="row overBtnPlace">
+                                                <div class="col12">
+                                                    <a ng-show="!sessionUser" ng-click="openLoginModal()" class="btnDefault btnSabzExt">
+                                                        <span class="icon" data-icon="&#xe0f0;"></span>
+                                                        <span class="txt">خرید</span>
+                                                    </a>
+                                                    <div class="overBtnPlaceTxt" ng-if="sessionUser && packItem.flag==1 && activationStat==='activeCredit'">بسته ویژه خریداری شده است</div>
+                                                    <a ng-show="sessionUser && (packItem.flag==0 || activationStat!=='activeCredit') " id="btnBuyPackage_{{packItem.package._id}}" class="btnDefault {{packItem.package.btnCls}}" ng-click="buyPackage(packItem)">
+                                                        <span class="icon" data-icon="&#xe0f0;"></span>
+                                                        <span class="txt">{{packItem.package.btnTxt}}</span>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <a id="btnMorePack" ng-show="packList.length>3" class="col12 btnDefault btnTosi" ng-href="#/buy">
+                                <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> بیشتر</span>
+                            </a>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,294 @@
+
+<script src="controller/profileCtrl.js"></script>
+<div class="row blockContentNew">
+
+    <div class="limit">
+        <div class="row block">
+            <layout-profile></layout-profile>
+
+            <!--messageBox-->
+            <div class="row _messageBox"></div>
+            <!--messageBox-->
+            <div class="row contentPlace">
+                <div class="col12">
+
+                    <div class="row rowHeader01">
+                        <div class="col12 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleOrange">
+                                پروفایل من
+                            </div>
+                        </div>
+                        <div class="col3">
+                        </div>
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+
+                    <div class="row menuTab">
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <label class="menuTabLabel" for="tab1"><span class="icon" data-icon="&#xe0b0;"></span>تنظیمات کاربری</label>
+                        <input ng-click="loadChart()" id="tab2" type="radio" name="tabs">
+                        <label class="menuTabLabel" for="tab2"><span class="icon" data-icon="&#xe03f;"></span>گزارش های نحوه عملکرد کاربر</label>
+                        <input id="tab3" type="radio" name="tabs">
+                        <label class="menuTabLabel" for="tab3"><span class="icon" data-icon="&#xe044;"></span>تنظیمات مجموعه کارت ها</label>
+
+                        <section id="content1">
+                            <form ng-enter="saveInformation()" name="profileForm">
+                                <div class="row itemSpace">
+                                    <div class="editPackagePage">
+                                        <div class="editPackageContent">
+                                            <div class="rowSelectDefault">
+                                                <!--
+                                                                            <div class="rowSelectExpandIn2">
+                                                                                <div class="row rowSpaceFormNew">
+                                                                                    <div class="col2 formInputLabelTitle">کاربر ثبت کننده</div>
+                                                                                    <div class="col3 formInputLabelNormal">نمونه متن</div>
+                                                                                    <div class="col2 formInputLabelTitle">تاریخ ثبت</div>
+                                                                                    <div class="col3 formInputLabelNormal">نمونه متن</div>
+                                                                                </div>
+                                                                            </div>
+                                                -->
+                                                <div class="rowSelectExpandIn2">
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col2 formInputLabelTitle">جنسیت</div>
+                                                        <div class="col1">
+                                                            <label class="radio-inline-form">
+                                                                <input class="radio-inline-form-input" ng-checked="profileUserInfo.user_info.gender == 'f'" type="radio" id="f-option" name="selector">
+                                                                <div class="check"></div>
+                                                                زن
+                                                            </label>
+                                                        </div>
+                                                        <div class="col1">
+                                                            <label class="radio-inline-form">
+                                                                <input class="radio-inline-form-input" ng-checked="profileUserInfo.user_info.gender == 'm'" type="radio" id="m-option" name="selector">
+                                                                <div class="check"></div>
+                                                                مرد
+                                                            </label>
+                                                            <!--
+                                                                                                    <div class="checkbox-inline">
+                                                                                                        <label class="cr-styled">
+                                                                                                            <input type="checkbox">
+                                                                                                            <i class="icon"></i>
+                                                                                                            زن
+                                                                                                        </label>
+                                                                                                    </div>
+                                                                                                    <div class="checkbox-inline">
+                                                                                                        <label class="cr-styled">
+                                                                                                            <input type="checkbox">
+                                                                                                            <i class="icon"></i>
+                                                                                                            مرد
+                                                                                                        </label>
+                                                                                                    </div>
+                                                            -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col2 formInputLabelTitle">نام</div>
+                                                        <div class="col3">
+                                                            <input data-validation-require="true" ng-model="profileUserInfo.user_info.name" class="formInputDefault" type="text" placeholder="نام">
+                                                        </div>
+                                                        <div class="col2 formInputLabelTitle">نام خانوادگی</div>
+                                                        <div class="col3">
+                                                            <input data-validation-require="true" ng-model="profileUserInfo.user_info.family" class="formInputDefault" type="text" placeholder="نام خانوادگی">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col2 formInputLabelTitle">سن</div>
+                                                        <div class="col3">
+                                                            <input ng-model="profileUserInfo.user_info.age" class="formInputDefault" type="text" placeholder="xx">
+                                                        </div>
+                                                        <div class="col2 formInputLabelTitle">تحصیلات</div>
+                                                        <div class="col3">
+                                                            <input ng-model="profileUserInfo.user_info.education" class="formInputDefault" type="text" placeholder="آخرین مقطع تحصیلی">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <!--<div class="col2 formInputLabelTitle">موبایل</div>
+                                                        <div class="col3">
+                                                            <input ng-model="profileUserInfo.user_info.phone" class="formInputDefault" type="text" placeholder="091xxxxxxxx">
+                                                        </div>-->
+                                                        <div class="col2 formInputLabelTitle">ایمیل</div>
+                                                        <div class="col3">
+                                                            <input ng-model="profileUserInfo.user_info.email" class="formInputDefault" type="text" data-validation-pattern="email" placeholder="yourmail@mailserver.ext">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row rowSelectFormBtnPlace">
+                                                <div class="col5"></div>
+                                                <div class="col2">
+                                                    <a ng-click="saveInformation()" class="btnPageOk btnColored">
+                                                        <span class="txt"><span class="icon" data-icon="&#xe042;"></span> ذخیره</span>
+                                                    </a>
+                                                </div>
+                                                <!--<div class="col2">
+                                                    <a class="btnPageNOk">
+                                                        <span class="txt"><span class="icon" data-icon="&#xe036;"></span> انصراف</span>
+                                                    </a>
+                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+
+                        <section id="content2">
+                            <div class="row">
+                                <div class="col12">
+                                    <div class="row editPackagePage">
+                                        <div class="editPackageContent">
+                                            <div class="rowSelectDefault">
+                                                <div class="rowSelectExpandIn2">
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col8 formInputLabelTitle">تعداد کل کارت های شما:</div>
+                                                        <div class="col4 formInputLabelNormalLeft">{{profileUserInfo.statistical_info.total_cards_num}}</div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col8 formInputLabelTitle">تعداد کل مجموعه کارت های فعال شما:</div>
+                                                        <div class="col4 formInputLabelNormalLeft">{{profileUserInfo.statistical_info.total_favorite_decks_num}}</div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col8 formInputLabelTitle">تعداد کل مجموعه کارت های شما:</div>
+                                                        <div class="col4 formInputLabelNormalLeft">{{profileUserInfo.statistical_info.total_decks_num}}</div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col8 formInputLabelTitle">تعداد مجموعه هایی که هنوز فعال نکرده اید:</div>
+                                                        <div class="col4 formInputLabelNormalLeft">{{profileUserInfo.statistical_info.total_non_favorite_decks_num}}</div>
+                                                    </div>
+                                                    <div class="row rowSpaceFormNew">
+                                                        <div class="col8 formInputLabelTitle">کارت هایی که به طور کامل یاد گرفته اید:</div>
+                                                        <div class="col4 formInputLabelNormalLeft">{{profileUserInfo.statistical_info.fully_learnt_cards_num}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col12">
+
+                                    <div class="row editPackagePage">
+                                        <div class="editPackageContent">
+                                            <div class="rowSelectDefault">
+
+                                                <div class="rowSelectExpandIn2">
+                                                    <dl class="expand">
+                                                        <dt class="expand">
+                                                            نمودار پیشرفت کاربر
+                                                        </dt>
+
+                                                        <dd ng-repeat="item in chartInfo" class="percentageExpand percentage-{{item.learnt_precent}}"><span class="text">{{item.deck_name}}</span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                        <dd ng-if="!chartInfo.length" class="percentageExpand percentage-0"><span class="text"></span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="content3">
+                            <div class="row itemSpace">
+                                <div class="editPackagePage">
+                                    <div class="editPackageContent">
+                                        <div class="rowSelectDefault">
+                                            <div class="rowSelectExpandIn2">
+                                                <div class="row rowSpaceFormNew">
+                                                    <div class="col2 formInputLabelTitle">تعداد کارت جدید روزانه</div>
+                                                    <div class="col1">
+                                                        <div class="pagingRowNoPlace">
+                                                            <form name="newCardsForm">
+                                                                <!--<input ng-model="countNewCards" type="number" min="0" step="5" data-validation-require="true" class="formInputDefault rowwNo" />-->
+                                                                <div class="quantityProfile">
+                                                                    <input ng-enter="saveDecksSettings()" ng-model="countNewCards"
+                                                                           class="formInputDefault" type="number"
+                                                                           min="0" step="5" data-validation-require="true">
+                                                                </div>
+                                                                <script>
+
+                                                                    jQuery('<div class="quantityProfile-nav"><div class="quantityProfile-button quantityProfile-up">+</div><div class="quantityProfile-button quantityProfile-down">-</div></div>').insertAfter('.quantityProfile input');
+                                                                    jQuery('.quantityProfile').each(function () {
+                                                                        var spinner = jQuery(this),
+                                                                          input = spinner.find('input[type="number"]'),
+                                                                          btnUp = spinner.find('.quantityProfile-up'),
+                                                                          btnDown = spinner.find('.quantityProfile-down'),
+                                                                          min = input.attr('min'),
+                                                                          max = input.attr('max');
+
+                                                                        btnUp.click(function () {
+                                                                            var oldValue = parseFloat(input.val());
+                                                                            if (oldValue >= max) {
+                                                                                var newVal = oldValue;
+                                                                            } else {
+                                                                                var newVal = oldValue + 5;
+                                                                            }
+                                                                            spinner.find("input").val(newVal);
+                                                                            spinner.find("input").trigger("change");
+                                                                        });
+
+                                                                        btnDown.click(function () {
+                                                                            var oldValue = parseFloat(input.val());
+                                                                            if (oldValue <= min) {
+                                                                                var newVal = oldValue;
+                                                                            } else {
+                                                                                var newVal = oldValue - 5;
+                                                                            }
+                                                                            spinner.find("input").val(newVal);
+                                                                            spinner.find("input").trigger("change");
+                                                                        });
+
+                                                                    });
+
+                                                                </script>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row rowSelectFormBtnPlace">
+                                            <div class="col5"></div>
+                                            <div class="col2">
+                                                <a ng-click="saveDecksSettings()" class="btnPageOk btnColored">
+                                                    <span class="txt"><span class="icon" data-icon="&#xe042;"></span> ذخیره</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="limit">
+            <div class="row block">
+                <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/classie.js"></script>
+<!-- script src="scripts/mainSlide.js"></script> -->
+<script src="scripts/gnmenu.js"></script>
+<script>
+    new gnMenu(document.getElementById('gn-menu'));
+</script>
+

@@ -1,0 +1,300 @@
+
+<script src="controller/buyCtrl.js"></script>
+
+<div class="row blockContentNew">
+    <div class="limit">
+        <div class="row block">
+            <!--messageBox-->
+            <div class="row _messageBox"></div>
+            <!--messageBox-->
+
+            <div class="row contentPlace">
+                <div class="col8 contentPlaceRight">
+                    <div class="row rowHeader02">
+                        <div class="col12 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="اینجا مجموعه کارت  های موجود در سیستم رو ببین" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+
+                            <div class="col contentPlaceTitleSabz">
+                                مجموعه کارت ‌های موجود
+                            </div>
+                        </div>
+                        <!--<div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                                <span class="icon" data-icon="&#xe215;"></span>
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+
+                                <div class="dropdownDefault">
+                                    <select class="formInputDefault">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>-->
+                        <!--<div class="col3">
+                            <div class="col2 inputSearchContentIcon">
+                                <span class="icon" data-icon="&#xe1c6;"></span>
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                                <input class="inputSearchContent" placeholder="جستجو">
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="row rowHeader02 _bg">
+                        <div class="col12 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="توضیحات راهنما" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleSabz">
+                                گروه‌ها
+                            </div>
+                            <div class="col headerBtnPlace">
+                                <button class="btnMenuModeSmall btnSabz" id="showr">
+                                    <span class="icon" data-icon="&#xe215;"></span>
+                                </button>
+                            </div>
+                            <div id="content">
+                                <ul id="nav-shadow" class="_catList">
+
+                                    <div class="row listEmpty" ng-show="publicCatList.length===0">
+                                        <img src="images/listEmpty.png">
+                                    </div>
+                                    <li class="col2 headerBtnPlace cat" ng-click="getDeckList(undefined,0)" style="display: none;">
+                                        <a class="btnDefault02 btnTosi selected" id="allCat"><span class="txt">همه</span></a>
+                                    </li>
+                                    <li class="col2 headerBtnPlace cat" style="display: none;" ng-click="getDeckList(catItem._id,0)" ng-repeat="catItem in publicCatList">
+                                        <a class="btnDefault02 btnTosi" id="{{catItem._id}}"><span class="txt">{{catItem.name}}</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--<div class="col3">-->
+                        <!--<div class="col2 inputSearchContentIcon">
+                            <span class="icon" data-icon="&#xe1c6;"></span>
+                        </div>-->
+                        <!--<div class="col10 inputSearchContentPlace">
+                            <input class="inputSearchContent" placeholder="جستجو">
+                        </div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+
+                    <div class="row">
+                        <section id="userDeckLoader" class="loaderModal" ng-show="publicCatListLoader">
+                            <!-- the component -->
+                            <ul class="bokeh">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                        </section>
+                        <ul class="row bg-w">
+                            <div class="row listEmpty" ng-if="publicDeckList.length===0">
+                                <img src="images/listEmpty.png">
+                            </div>
+                            <li class="col12 packItemNew02" ng-repeat="pubDeckItem in publicDeckList" ng-if="publicDeckList.length>0">
+                                <div class="row _deckBack">
+                                    <div class="col panelHomePackPic">
+                                        <div class="itemImg" style="background-image:url({{deckImageSource}}{{pubDeckItem.image}})"></div>
+                                    </div>
+                                    <div class="col8">
+                                        <div class="row panelHomePackTitle">{{pubDeckItem.name}}</div>
+                                        <div class="row panelHomePackDesc2">{{pubDeckItem.description}}</div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                            <span class="panelHomePackNo">{{pubDeckItem.num_cards}}</span>
+                                        </div>
+                                        <!--<div class="row">
+                                        <span class="panelHomePackTag02">تگ ها:</span>-->
+                                        <!--<span class="panelHomePackTag02">زبان</span>
+                                        <span class="panelHomePackTag02">لغت</span>
+                                        <span class="panelHomePackTag02">گرامر</span>-->
+                                        <!--</div>-->
+                                    </div>
+                                    <!-- <div class="col4 panelHomePackNoColored">
+                                         <div class="row">
+                                              <div class="col panelHomePackNoGreen">{{pubDeckItem.price}}</div>
+                                     <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                         </div>
+                                     </div>-->
+                                </div>
+                                <div class="packItemNewOver02">
+                                    <div class="col2"></div>
+                                    <div class="col8">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12" ng-if="!pubDeckItem.flag">
+
+                                                <a class="btnDefault btnWhite" ng-if="sessionUser && pubDeckItem.flag==0" ng-click="decDetail(pubDeckItem)">
+                                                    <span class="icon" data-icon="&#xe35f;"></span>
+                                                    <!--<span class="txt">جزئیات</span>-->
+                                                    <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                </a>
+                                                <a class="btnDefault btnWhite" ng-if="!sessionUser" ng-click="decDetail(pubDeckItem)">
+                                                    <span class="icon" data-icon="&#xe35f;"></span>
+                                                    <!--<span class="txt">جزئیات</span>-->
+                                                    <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                </a>
+                                            </div>
+                                            <div class="col12" ng-if="pubDeckItem.flag && pubDeckItem.fav_flg">
+
+                                                <div class="col6">
+                                                    <a id="btnFav{{pubDeckItem._id}}" class="btnDefault btnAbi" ng-click="decLearn(pubDeckItem,'buy')">
+                                                        <span class="icon" data-icon="&#xe1bb;"></span>
+                                                        <!--<span class="txt">شروع یادگیری</span>-->
+                                                        <span class="txt">{{scBtnNames._btnGoToLearning}}</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+                                                    <a class="btnDefault" ng-click="decDetail(pubDeckItem)">
+                                                        <span class="icon" data-icon="&#xe35f;"></span>
+                                                        <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col12" ng-if="pubDeckItem.flag && !pubDeckItem.fav_flg">
+                                                <div class="col6">
+                                                    <a class="btnDefault btnWhite" ng-click="decDetail(pubDeckItem)">
+                                                        <span class="icon" data-icon="&#xe35f;"></span>
+                                                        <span class="txt">{{scBtnNames._btnDetails}}</span>
+                                                    </a>
+                                                </div>
+                                                <div class="col6">
+                                                    <a id="btnFav{{pubDeckItem._id}}" class="btnDefault btnWhiteToY" ng-click="decFavorite(pubDeckItem,pubDeckItem.packages)">
+                                                        <span class="icon" data-icon="&#xe10f;"></span>
+                                                        <!--<span class="txt">افزودن به علاقه‌مندی‌ها</span>-->
+                                                        <span class="txt">{{scBtnNames._btnAddToFavorite}}</span>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--<a id="btnMore" ng-show="deck_page_no_ends" class="col12 btnDefault btnTosi _deckBack" ng-click="getDeckList(deckCurrentCatItem,(deckCurrentPageNumber+1))">
+                            <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> {{scBtnNames._btnMore}}</span>
+                        </a>-->
+                        <a id="btnMoreDeck" ng-show="deck_page_no_ends" class="col12 btnDefault btnTosi _bg" ng-click="getDeckList(deckCurrentCatItem,(deckCurrentPageNumber+1))">
+                            <span class="txt"><span class="icon" data-icon="&#xe00a;"></span>{{scBtnNames._btnMore}}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col4 contentPlaceLeft">
+                    <div class="row rowHeader02">
+                        <div class="col6 contentPlaceBtnPlace">
+                            <div class="col">
+                                <a class="btnMenuModeTransparent" title="اینجا بسته های ویژه رو ببین" rel="tooltip">
+                                    <span class="icon" data-icon="&#xe145;"></span>
+                                </a>
+                            </div>
+                            <div class="col contentPlaceTitleSabz">
+                                بسته‌های ویژه
+                            </div>
+                        </div>
+                        <div class="col1">
+                            <div class="col2 inputSearchContentIcon">
+                            </div>
+                            <div class="col10 inputSearchContentPlace">
+                            </div>
+                        </div>
+                        <!--<div class="col5 headerBtnPlace">
+                            <a class="btnDefault btnTosiNew" ng-href="#/panel">
+                                <span class="icon" data-icon="&#xe052;"></span>
+                                <span class="txt">بازگشت</span>
+                            </a>
+                        </div>-->
+                    </div>
+                    <div class="row rowSelectHeader rowSelectHeaderDivider">
+                    </div>
+
+                    <div class="row">
+                        <ul class="row bg-w">
+                            <div class="row listEmpty" ng-show="packList.length===0">
+                                <img src="images/listEmpty.png">
+                            </div>
+
+                            <li class="col12 packItemNew03" ng-repeat="packItem in packList" rel="tooltip" title="{{packItem.package.description}}">
+
+                                <div class="row">
+                                    <div class="col panelHomePackPic _packInner"><div class="itemImgPackGold"></div></div>
+                                    <div class="col6">
+                                        <div class="row panelHomePackTitle">{{packItem.package.name}}</div>
+                                        <div class="row panelHomePackDesc2">{{packItem.package.description}}</div>
+                                        <div class="row">
+                                            <div class="col panelHomePackNoGreen">{{packItem.package.price}}</div>
+                                            <div class="col panelHomePackNoGreenTxt">تومان</div>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackDesc"
+                                                  ng-init="packDeckLismit = packItem.package.decks_limit !=='all' ? packItem.package.decks_limit : 'همه مجموعه کارت  ها'">تعداد :</span>
+                                            <span class="panelHomePackNo">{{packDeckLismit}}</span>
+                                        </div>
+                                        <div class="row">
+                                            <span class="panelHomePackTag02">کد بسته: {{packItem.package.vas_code}}</span>
+                                            <!-- <span class="panelHomePackTag02">زبان</span>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="packItemNewOver03">
+                                    <div class="col3"></div>
+                                    <div class="col6">
+                                        <div class="row overBtnPlace">
+                                            <div class="col12">
+                                                <div class="overBtnPlaceTxt" ng-if="sessionUser && packItem.flag==1 && activationStat==='activeCredit'">بسته ویژه خریداری شده است</div>
+                                                <a id="btnBuyPackage_{{packItem.package._id}}" ng-if="sessionUser && (packItem.flag==0 || activationStat!=='activeCredit')" class="btnDefault {{packItem.package.btnCls}}"
+                                                   ng-click="buyPackage(packItem)">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">{{packItem.package.btnTxt}}</span>
+                                                </a>
+
+                                                <a id="btnBuyPackage_{{packItem.package._id}}" ng-if="!sessionUser" class="btnDefault {{packItem.package.btnCls}}" ng-click="openLoginModal()">
+                                                    <span class="icon" data-icon="&#xe0f0;"></span>
+                                                    <span class="txt">{{packItem.package.btnTxt}}</span>
+                                                </a>
+
+                                                <!--<a class="btnDefault btnSabz" ng-if="!sessionUser" ng-click="openRegisterModal()">
+                                                    <span class="icon" data-icon="&#xe35f;"></span>
+                                                    <span class="txt">{{scBtnNames._btnBuy}}</span>
+                                                </a>-->
+     </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </li>
+                        </ul>
+                        <a id="btnMorePack" class="col12 btnDefault btnTosi">
+                            <span class="txt"><span class="icon" data-icon="&#xe00a;"></span> {{scBtnNames._btnMore}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>

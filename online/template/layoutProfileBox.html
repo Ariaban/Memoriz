@@ -1,0 +1,92 @@
+<div ng-controller="layoutProfileCtrl" class="row profilePlace">
+    <div class="col6 panelProfileHomePlaceDivRight">
+        <div class="row panelProfileHomePlace">
+            <!--messageBox-->
+            <!--<div class="row _messageBox"></div>-->
+            <!--messageBox-->
+            <div class="col4 colM6 panelProfileHomePicPlace">
+                <div ng-show="profilePage" class="box inputfileProfilePlace">
+                    <input accept="image/*" type="file" name="profileImageToUpload" id="profileImageToUpload" class="inputfileProfile">
+                    <label for="profileImageToUpload">
+                        <figure>
+                            <!--<img class="panelProfileHomePic" style="background-image:url({{layoutUserImage}})">-->
+                            <div class="panelProfileHomePicAdd" style="background-image: url({{layoutUserImage}});">
+                                <span ng-if="loadingUploadProfileImage" class="loaderProfile"><img src="images/loaderProfile.gif"></span>
+                            </div>
+                        </figure>
+                    </label>
+                    <div ng-click="openUploadProfile()" class="labelTxt">افزودن تصویر</div>
+                </div>
+
+                <div ng-show="!profilePage" class="box inputfileProfilePlace">
+                    <!--<img class="panelProfileHomePic" style="background-image:url({{layoutUserImage}})">-->
+                    <div class="panelProfileHomePic" style="background-image: url({{layoutUserImage}});"></div>
+                </div>
+
+            </div>
+
+            <div class="col8 colM6 panelProfileHomePlaceTxt">
+
+                <div class="row panelProfileHomeName">{{layoutUserInfo.user_info.name}} {{layoutUserInfo.user_info.family}}</div>
+                <div class="row panelProfileHomeDesc">
+                    <span class="icon" data-icon="1"></span><span>بسته ویژه فعال: </span>
+                    <span class="panelProfileHomeDesc2">{{layoutUserInfo.packages[0].name}}</span>
+                    <span class="panelProfileHomeDesc2"></span>
+                </div>
+                <a class="btnDefault btnSabz" ng-click="openBuyModal()" ng-if="sessionUser && (activationStat==='inValidCredit' || activationStat==='unknownCredit' || activationStat==='deactivatedCredit')">
+                    <span class="icon" data-icon="&#xe02c;"></span>
+                    <span class="txt">خرید بسته ویژه</span>
+                </a>
+                <a ng-click="reloadProfile()" class="btnDefault btnZard"
+                   ng-show="sessionUser && activationStat==='activeCredit'">
+                    <span class="icon" data-icon="&#xe012;"></span>
+                    <span class="txt">بارگزاری مجدد صفحه</span>
+                </a>
+                <div class="row panelProfileHomeDesc">
+                    <span class="icon" data-icon="&#xe0e7;"></span><span>تاریخ خرید بسته: </span>
+                    <span class="panelProfileHomeDesc2">{{layoutUserInfo.packages[0].start_date}}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col4 panelProfileHomePlaceDiv">
+
+        <div class="row panelProfileHomeDesc">
+            <span class="icon" data-icon=""></span><span>تعداد کل کارت های شما: </span>
+            <span class="panelProfileHomeNoChart">{{layoutUserInfo.statistical_info.total_cards_num}}</span>
+        </div>
+        <div class="row panelProfileHomeDesc">
+            <span class="icon" data-icon=""></span><span>تعداد کل مجموعه کارت های فعال شما: </span>
+            <span class="panelProfileHomeNoChart">{{layoutUserInfo.statistical_info.total_favorite_decks_num}}</span>
+        </div>
+        <div class="row panelProfileHomeDescChart" id="chart1" ng-click="showChart($event)" data-name="chart1">
+            <span class="icon" data-icon=""></span><span data-name="chart1">تعداد کارت های در حال یادگیری: </span>
+            <span class="panelProfileHomeNoChart">{{layoutUserInfo.statistical_info.card_review}}</span>
+        </div>
+        <!--<div class="row panelProfileHomeDescChart" id="chart2" ng-click="showChart($event)">
+            <span class="icon" data-icon=""></span><span data-name="chart2">کارت هایی که به طور کامل یاد گرفته اید: </span>
+            <span class="panelProfileHomeNoChart">.....</span>
+        </div>-->
+        <div class="row panelProfileHomeDescChart" id="chart2" ng-click="showChart($event)" data-name="chart2">
+            <span class="icon" data-icon=""></span><span  data-name="chart2">کارت های یادگرفته شده: </span>
+            <span class="panelProfileHomeNoChart">{{layoutUserInfo.statistical_info.fully_learnt_cards_num}}</span>
+        </div>
+        <!--<div class="row panelProfileHomeDesc">
+            <div class="buttons btnChart"></div>
+        </div>-->
+    </div>
+    <div class="col2 panelProfileHomePlaceChart">
+
+        <figure>
+
+            <svg width="134" height="134" class="chart">
+                <circle r="33" cx="67" cy="67" class="pie" />
+            </svg>
+
+
+
+        </figure>
+
+    </div>
+</div>

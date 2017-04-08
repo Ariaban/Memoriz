@@ -1,0 +1,234 @@
+<script src="controller/myCardsCtrl.js"></script>
+<!--messageBox-->
+<div class="row _messageBox"></div>
+<!--messageBox-->
+<div class="row blockContentNew">
+
+    <div class="limit">
+        <div class="row block">
+
+            <ul class="packCatFilteringPlace">
+
+                <li id="btnAllCats" ng-click="selectCategoryAndShowDecksAndShowCards(null)" class="packCatFiltering select">
+                    <div class="packCatFilteringTitleIcon">
+                        <img src="images/flag-all.svg" width="65px">
+                        <!--<span class="icon" data-icon="&#xe2f2;"></span>-->
+                    </div>
+                    <div class="packCatFilteringTitle">همه گروه‌ها</div>
+                </li>
+                <li id="cat{{categoryItem._id}}" ng-repeat="categoryItem in categoryList" ng-click="selectCategoryAndShowDecksAndShowCards(categoryItem)" class="packCatFiltering">
+                    <div class="packCatFilteringTitleIcon">
+                        <!--<span class="icon" data-icon="&#xe2f2;"></span>-->
+                        <img src="{{catImageSource}}{{categoryItem.image}}" width="65px">
+                    </div>
+                    <div class="packCatFilteringTitle">{{categoryItem.name}}</div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="limit">
+        <div class="row block">
+            <div class="row">
+                <div class="rowSelectDefault">
+
+
+                    <div class="col3 search-filter">
+                        <ul>
+
+                            <li class="parent-Cat">
+                                <h1 class="heading">{{currentCategoryInfo.name}}</h1>
+                                <ul class="Category">
+                                    <li>
+                                        <a id="btnAllDecks" class="parent-layer2 selectLayer2" ng-click="selectDeckAndShowCards(null)">
+                                            <span class="txt">همه دسته‌ها</span>
+                                            <span class="number"></span>
+                                        </a>
+                                        <a id="deck{{deckItem.deck._id}}" ng-repeat="deckItem in currentDeckList" ng-click="selectDeckAndShowCards(deckItem.deck)" class="parent-layer2">
+                                            <span class="txt">{{deckItem.deck.name}}</span>
+                                            <span class="number">({{deckItem.deck.num_cards}})</span>
+                                        </a>
+                                    </li>
+                                    <!--<li>
+                                        <a class="parent-layer2">
+                                            <span class="txt">زبان فرانسه</span>
+                                            <span class="number">(1022)</span>
+                                        </a>
+                                        <ul class="child">
+                                            <li>
+                                                <a href="" class="catItemChild" >
+                                                    <span class="txt">گرامر</span>
+                                                    <span class="number"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" class="catItemChild" >
+                                                    <span class="txt">لغت</span>
+                                                    <span class="number"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>-->
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col9">
+                        <div class="content-filter-topbar">
+                            <div class="row">
+                                <div class="col6 site-map">
+                                    <ul>
+                                        <li>{{currentCategoryInfo.name}}</li>
+                                        <li class="sep">
+                                            <img src="images/patharrow.png" alt="">
+                                        </li>
+                                        <li>{{currentDeckInfo.name}}</li>
+                                        <!--<li class="sep">
+                                            <img src="images/patharrow.png" alt="">
+                                        </li>-->
+                                        <!--<li>لغت</li>-->
+                                    </ul>
+                                </div>
+                                <div class="col6">
+                                    <!--<div class="col10 inputSearchContentPlace">
+                                        <input ng-enter="searchAndShowCards()" ng-model="txtSearch" class="inputSearchContent" placeholder="جستجو">
+                                        <span class="icon" data-icon=""></span>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="row filter-select">
+                                <div class="col6">
+                                    <div class="row">
+                                        <div class="col4">
+                                            <div class="dropdownDefaultT">
+                                                <select class="formInputDefaultT" ng-model="filter" ng-change="selectFavoriteStatus()">
+                                                    <option value="">مورد علاقه / عادی </option>
+                                                    <option selected value="favorite">مورد علاقه</option>
+                                                    <option value="unfavorite">عادی</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col6">
+                                    <div class="result-counts">
+                                        <span><strong>{{stat.deck}}</strong> دسته</span>
+                                        <span><strong>{{stat.card}}</strong> کارت </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--<div class="filter-tag">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="filter-tag-item">
+                                            زبان
+                                            <span class="icon" data-icon=""></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="filter-tag-item">
+                                            504 واژه
+                                            <span class="icon" data-icon=""></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>-->
+                        </div>
+                        <div class="row contentPlaceNew">
+
+                            <div class="row listEmpty" ng-show="stat.card == 0">
+                                <img src="images/listEmpty.png">
+                            </div>
+
+                            <ul ng-show="stat.card != 0" class="row contentCardSaveAll">
+                                <li ng-click="selectDeckAndShowCards(deckWithCardsItem)" ng-if="deckWithCardsItem.cards.length > 0" ng-repeat="deckWithCardsItem in decksWithCardsList">
+                                    <div class="col cardItemInfo" style="margin:0px;">
+                                        <!--Mr kafi-->
+                                        <div class="row">
+                                            <div class="panelHomePackPic"><div class="itemImg" style="background-image: url({{deckImageSource}}{{deckWithCardsItem.image}})"></div></div>
+                                            <div class="row panelHomePackTitle">{{deckWithCardsItem.name}}</div>
+                                            <div class="row panelHomePackDesc2">
+                                                {{deckWithCardsItem.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col contentCardSave">
+                                        <ul class="contentCardSaveItems">
+                                            <li ng-repeat="cardItem in deckWithCardsItem.cards">
+                                                <a ng-if="cardItem.favorite" class="iconBadgePlace">
+                                                    <div class="icon" data-icon="&#xe1ee;"></div>
+                                                    <div class="iconBadgePlace2"><div class="icon" data-icon="&#xe22a;"></div></div>
+                                                </a>
+                                                <div class="col cardItem">
+                                                    <div ng-bind-html='toTrustedHTML(cardItem.front)'></div>
+                                                </div>
+                                                <div class="col cardItemBack">
+                                                    <div ng-bind-html='toTrustedHTML(cardItem.back)'></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div ng-show="stat.card != 0" class="pagingCompFooter">
+                                <!-- gridCompFooter -->
+                                <div class="pagingNoRecPlace">
+                                    <span class="noRecTxt">تعداد کل: </span>
+                                    <span class="noRecAll">{{number_of_pages}}</span>
+                                </div>
+                                <div class="pagingPagesPlace">
+                                    <ul class="paging">
+                                        <li class="arrowRight"  ng-if="currentPage>1">
+                                            <a ng-click="setCurrent(currentPage-1)"><span class="icon" data-icon="&#xe128;"></span></a>
+                                        </li>
+                                        <li ng-repeat="page in pages" ng-class="page-1 == (currentPage) ? 'select' : ''">
+                                            <a ng-click="setCurrent(page-1)">{{page}}</a>
+                                        </li>
+                                        <li class="arrowLeft" ng-if="number_of_pages>5">
+                                            <a ng-click="setCurrent(currentPage+1)"><span class="icon" data-icon="&#xe129;"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pagingBlockLeftPlace">
+                                    <!--<div class="pagingNoPlace">
+                                        <span class="noAll">{{number_of_pages}}</span>
+                                        <span class="noSep">/</span>
+                                        <span><input ng-model="setManualPageNumber" class="formInputDefault no" type="number" integer-only min="0" max="{{number_of_pages}}" ng-enter="showCards(setManualPageNumber)" placeholder="شماره صفحه"></span>
+                                    </div>-->
+                                    <div class="pagingRowNoPlace">
+                                        <select ng-model="pageSize" ng-change="changePageSize()" class="formInputDefault rowwNo">
+                                            <option value="2">2</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>

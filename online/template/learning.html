@@ -1,0 +1,272 @@
+
+<script src="controller/learningCtrl.js"></script>
+
+<div class="row blockContentNew" keypress-events>
+    <div class="limit">
+        <!--messageBox-->
+        <div class="row _messageBox"></div>
+        <!--messageBox-->
+        <div class="row block">
+            <div class="row nobarPlace">
+                <div class="col1 nobarPlaceNoEnd">
+                    {{cardNumb}}
+                </div>
+                <div class="col10">
+                    <div class="row">
+                        <form>
+                            <input id="rangeBar" style="width: 100%; pointer-events:none" type="range" name="foo" value="1" min="1" max="{{cardNumb}}">
+                            <output id="outputRangeBar" style="pointer-events:none" for="foo" onforminput="value = foo.valueAsNumber;"></output>
+                        </form>
+                        <script>
+                var el, newPoint, newPlace, offset;
+
+                // Select all range inputs, watch for change
+                $("input[type='range']").change(function () {
+
+                    // Cache this for efficiency
+                    el = $(this);
+
+                    // Measure width of range input
+                    width = el.width();
+
+                    // Figure out placement percentage between left and right of input
+                    newPoint = (el.val() - el.attr("min")) / (el.attr("max") - el.attr("min"));
+
+                    offset = -1;
+
+                    // Prevent bubble from going beyond left or right (unsupported browsers)
+                    if (newPoint < 0) { newPlace = 0; }
+                    else if (newPoint > 1) { newPlace = width; }
+                    else { newPlace = width * newPoint + offset; offset -= newPoint; }
+
+                    // Move bubble
+                    el
+                      .next("output")
+                      .css({
+                          left: newPlace,
+                          marginLeft: offset + "%"
+                      })
+                        .text(el.val());
+                })
+                 // Fake a change to position bubble at page load
+                 .trigger('change');
+                        </script>
+
+                    </div>
+                </div>
+                <div class="col1 nobarPlaceNoStart">
+                    1
+                </div>
+            </div>
+
+            <div class="row contentPlace">
+                <div class="col12 cardPlace02">
+                    <div class="row">
+                        <!--<section class="loader" id="learningDeckLoader">
+            
+                            <ul class="bokeh">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="loaderTxt"></div>
+                        </section>-->
+                        <div class="cardItemBK" id="bkChange-toggle">
+                            <!--<div class="flip-container" id="flip-toggle" ontouchstart="this.classList.toggle('hover');">-->
+                            <div class="flip-container" id="flip-toggle"  ng-show="!endLearn && todayCards.length!==0">
+                                <div class="flipper">
+
+                                    <div class="front fadeLoad">
+                                        <!-- front content -->
+
+                                        <div class="cardItem" style="overflow: auto;">
+                                            <div class="frontContainer">
+                                                <!--<img id="fImg" ng-if="hasFrontImage" class="flashCardLearnPic" style="width: 250px" src="{{imagesSource}}{{cardInfo.front_img}}" alt="" />-->
+                                                <!--
+                                        <img id="fImg" my-src="{{imagesSource}}{{cardInfo.front_img}}" style="width: 250px" ng-show="hasFrontImage" class="flashCardLearnPic" alt="" />-->
+                                                <!--<
+                                        pre id="preFront"> {{cardInfo.front}} </pre>-->
+
+                                                <div id="preFront" ng-bind-html='toTrustedHTML(cardInfo.front)'></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row cardItemBtnPlace">
+                                            <div class="cardItemBtnGroup02">
+                                                <a class="cardItemBtnReturn" ng-click="backCard(false)">
+                                                    <span class="icon" data-icon="&#xe029;"></span>
+                                                    <span class="txt">برگرداندن کارت</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="back">
+                                        <!-- back content -->
+
+                                        <div id="" style="overflow: auto;" class="cardItemBack">
+                                            <!--<img ng-show="hasImage" class="flashCardLearnPic" src="{{imagesSource}}{{cardInfo.img}}" alt="" />-->
+                                            <!--   <img id="bImg" my-src="{{imagesSource}}{{cardInfo.img}}" ng-show="hasImage" class="flashCardLearnPic" alt="" />-->
+                                            <!--<pre id="preBack"> {{cardInfo.back}} </pre>-->
+                                            <div id="preBack" ng-bind-html='toTrustedHTML(cardInfo.back)'></div>
+                                            <!--<div id="backContent">
+                                    </div>-->
+
+                                        </div>
+
+                                        <div class="row cardItemBtnPlace" dir="rtl">
+                                            <div class="cardItemBtnGroup02">
+                                                <a ng-click="answer(5,cardInfo._id)" class="cardItemBtnAns01">
+                                                    <div class="icon" data-icon="&#xe0cc;"></div>
+                                                    <div class="txt">راحت</div>
+                                                </a>
+                                                <a ng-click="answer(3,cardInfo._id)" class="cardItemBtnAns02">
+                                                    <div class="icon" data-icon="&#xe0bd;"></div>
+                                                    <div class="txt">متوسط</div>
+                                                </a>
+                                                <a ng-click="answer(0,cardInfo._id)" class="cardItemBtnAns03">
+                                                    <div class="icon" data-icon="&#xe130;"></div>
+                                                    <div class="txt">سخت</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardItemEndTxt" ng-show="endLearn">
+
+                                <div class="row">
+                                    <div class="col12 cardItemEndTxtPlace">این مرحله از یادگیری با موفقیت به پایان رسید</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col2"></div>
+                                    <div class="col8">
+                                        <a class="btnDefault btnSabz" ng-click="goBack()">
+                                            <span class="icon" data-icon="&#xe22b;"></span>
+                                            <span class="txt">بازگشت به صفحه اول</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="cardItemEndImg" ng-show="endLearn">
+                                <img src="images/image-end.png">
+                            </div>
+                            <div class="row cardItemEndLoading"  ng-show="!endLearn && todayCards.length===0">
+                                <div class="hourglass">
+                                    <div class="hourglass-stand"></div>
+                                    <div class="hourglass-sand"></div>
+                                    <div class="hourglass-stream"></div>
+                                </div>
+                            </div>
+                         </div>
+                        <div class="cardItemBtnGroup02" ng-show="!endLearn">
+                            <a id="btnCardFavorite" ng-click="addFavoriteCard()" class="cardItemBtnReturnNew">
+                                <div class="icon" data-icon="&#xe229;" ng-if="!cardInfo.favorite"></div>
+                                <div class="icon" data-icon="&#xe22a;" ng-if="cardInfo.favorite"></div>
+                                <!--<div class="txt">ذخیره کارت</div>-->
+                            </a>
+                            <a class="cardItemBtnReturnNew disable" id="backBtn">
+                                <div class="icon" data-icon="&#xe029;" ng-click="backCard(true)" ng-if="!bigBackButton"></div>
+                                <!--<div class="txt">برگرداندن کارت</div>-->
+                            </a>
+                            <a ng-click="openModalReportCard()" class="cardItemBtnReturnNew">
+                                <div class="icon" data-icon="&#xe015;"></div>
+                                <!--<div class="txt">گزارش خرابی</div>-->
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           
+            <div class="row contentPlace">
+                <!--                <div class="col12 cardPlaceInfo"> -->
+                <div class="col12">
+                    <div class="row packItemNew">
+                        <div class="row">
+                            <div class="col panelHomePackPic">
+                                <div class="itemImg" style="background-image:url({{deckImageSource}}{{deckInfoDes.image}})"></div>
+                            </div>
+                            <div class="col5">
+                                <div class="row panelHomePackTitle">{{deckInfoDes.name}}</div>
+                                <div class="row panelHomePackDesc2">
+                                    {{deckInfoDes.description}}
+                                </div>
+                                <div class="row">
+                                    <span class="panelHomePackDesc">تعداد کارت ها:</span>
+                                    <span class="panelHomePackNo">{{deckInfoDes.num_cards}}</span>
+                                </div>
+                                <div class="row">
+                                    <span class="panelHomePackTag"></span>
+                                    <span ng-repeat="tag in tags" class="panelHomePackTag">#{{tag}}</span>
+                                    <!--<span class="panelHomePackTag">لغت</span>
+                                    <span class="panelHomePackTag">گرامر</span>-->
+                                </div>
+                            </div>
+                            <div class="col3 panelHomePackLearnBtnPLace">
+
+                                <div class="row">
+                                    <div align="left" class="RankRow">
+                                        <fieldset class="starability-basic">
+                                            <input type="radio" id="rate5" name="rating" value="5" />
+                                            <label ng-click="rankDeck(5)" for="rate5">5 stars, amazing.</label>
+
+                                            <input type="radio" id="rate4" name="rating" value="4" />
+                                            <label ng-click="rankDeck(4)" for="rate4">4 stars, very good.</label>
+
+                                            <input type="radio" id="rate3" name="rating" value="3" />
+                                            <label ng-click="rankDeck(3)" for="rate3">3 stars, average.</label>
+
+                                            <input type="radio" id="rate2" name="rating" value="2" />
+                                            <label ng-click="rankDeck(2)" for="rate2">2 stars, not good.</label>
+
+                                            <input type="radio" id="rate1" name="rating" value="1" />
+                                            <label ng-click="rankDeck(1)" for="rate1">1 star, terrible.</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+
+
+
+                                <!--
+                                                    <div class="row">
+                                                        <a class="btnDefault03 btnZard">
+                                                            <span class="icon" data-icon="&#xe031;"></span>
+                                                            <span class="txt">افزودن به علاقه مندی های من</span>
+                                                        </a>
+                                                    </div>
+                    -->
+                                <div class="row">
+                                    <div class="" style="height:45px;"></div>
+                                </div>
+                                <div class="row">
+                                    <a class="btnDefault03 btnGhermez" ng-click="endLearnAction()">
+                                        <span class="icon" data-icon="&#xe284;"></span>
+                                        <span class="txt">خروج از یادگیری</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                    تمامی حقوق محفوظ میباشد و متعلق به تیم مموریز است، توسعه و پیاده سازی توسط تیم مموریز.
+                </div>
+        </div>
+    </div>
+</div>
+
+

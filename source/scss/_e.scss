@@ -43,7 +43,7 @@
         width: 100%;
         min-width: 100%!important;
         padding-right: 20px;
-        
+
     }
     .filter-select {
     width: 100%;
@@ -112,7 +112,7 @@
 .content-filter {
     min-height: 640px;
     background-color: #fff;
-    box-shadow: 0 0 5px 1px rgba(0,0,0,.07); 
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.07);
 }
 .content-filterPagingPlace {
     font: 0.85em/1em $fontApp;
@@ -120,7 +120,7 @@
     padding-left: 8px;
 }
 
-    
+
 
 .formInputDefaultT{
     position: relative;
@@ -161,7 +161,7 @@
     li.parent-Cat:first-child{
         margin-top: 0px;
     }
-    
+
     ul.Category {
         display: block;
         position: relative;
@@ -259,11 +259,11 @@
 //            .txt:hover {
 //                text-decoration: underline;
 //            }
-            
-           
+
+
 
         }
-        
+
     }
 
     ul.child {
@@ -331,7 +331,7 @@
                     color: $colorWhite !important;
                 }
             }
-           
+
 
         }
     }
@@ -348,7 +348,7 @@
 
         }
     }
-    
+
 }
 
 
@@ -375,7 +375,7 @@
 .sky-tabs > label {
     font: 1.25em/1em $fontApp;
     color: $colorFontL3;
-    font-weight: 600;
+    font-weight: 400;
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -384,7 +384,7 @@
     padding: 1px;
     padding-top: 0;
     padding-left: 0;
-    font-size: 13px;
+//    font-size: 13px;
     line-height: 45px;
     cursor: pointer;
     .icon{
@@ -401,23 +401,21 @@
 }
 .sky-tabs > label span {
     display: block;
-    padding: 5px;
-    background: rgba(255,255,255,0.9);
-
+//    padding: 5px;
+    background: rgba(255,255,255,0.65);
 }
 .sky-tabs > label span span {
-
     padding: 0 20px;
     background: transparent;
     transition: background 0.4s, color 0.4s;
     -o-transition: background 0.4s, color 0.4s;
     -ms-transition: background 0.4s, color 0.4s;
     -moz-transition: background 0.4s, color 0.4s;
-    -webkit-transition: background 0.4s, color 0.4s;    
+    -webkit-transition: background 0.4s, color 0.4s;
 }
 .sky-tabs > label:hover span span {
     background: #555;
-    color: #fff;    
+    color: #fff;
 }
 .sky-tabs > label.disabled span span {
     background: transparent;
@@ -431,7 +429,7 @@
     color: #fff;
 }
 .border-bottom {
-        border-bottom: 1px solid rgba(85, 85, 85, 0.35);
+    border-bottom: 1px solid rgba(85, 85, 85, 0.15);
 }
 .sky-tabs > .switcher {
     display: none;
@@ -457,7 +455,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 505px;
+    min-height: 660px;
     overflow: auto;
     padding: 20px 25px 25px;
     border-top-left-radius: 5px;
@@ -470,9 +468,9 @@
     -ms-transform-origin: 0% 0%;
     -moz-transform-origin: 0% 0%;
     -webkit-transform-origin: 0% 0%;
-    -o-transition: opacity 0.8s, -o-transform 0.8s; 
-    -ms-transition: opacity 0.8s, -ms-transform 0.8s;   
-    -moz-transition: opacity 0.8s, -moz-transform 0.8s; 
+    -o-transition: opacity 0.8s, -o-transform 0.8s;
+    -ms-transition: opacity 0.8s, -ms-transform 0.8s;
+    -moz-transition: opacity 0.8s, -moz-transform 0.8s;
     -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
 }
 .sky-tabs > .sky-tab-content-1:checked ~ ul > .sky-tab-content-1,
@@ -612,19 +610,19 @@
     -o-transform: translate(15%,-15%);
     -ms-transform: translate(15%,-15%);
     -moz-transform: translate(15%,-15%);
-    -webkit-transform: translate(15%,-15%); 
+    -webkit-transform: translate(15%,-15%);
 }
 .sky-tabs-anim-slide-down-right > ul > li {
     -o-transform: translate(15%,15%);
     -ms-transform: translate(15%,15%);
     -moz-transform: translate(15%,15%);
-    -webkit-transform: translate(15%,15%);  
+    -webkit-transform: translate(15%,15%);
 }
 .sky-tabs-anim-slide-down-left > ul > li {
     -o-transform: translate(-15%,15%);
     -ms-transform: translate(-15%,15%);
     -moz-transform: translate(-15%,15%);
-    -webkit-transform: translate(-15%,15%); 
+    -webkit-transform: translate(-15%,15%);
 }
 .sky-tabs > .sky-tab-content-1:checked ~ ul > .sky-tab-content-1,
 .sky-tabs > .sky-tab-content-2:checked ~ ul > .sky-tab-content-2,
@@ -712,7 +710,7 @@
     -o-transform: rotateY(90deg);
     -ms-transform: rotateY(90deg);
     -moz-transform: rotateY(90deg);
-    -webkit-transform: rotateY(90deg);  
+    -webkit-transform: rotateY(90deg);
 }
 .sky-tabs-anim-flip.sky-tabs-pos-right > ul > li {
     -o-transform: rotateY(-90deg);
@@ -868,7 +866,7 @@
     color: #333;
 }
 .sky-tabs .typography h1 {
-    font-size: 40px;
+    font-size: 32px;
     line-height: 50px;
     font-weight: 300;
 }
@@ -1019,14 +1017,14 @@
 /* phone */
 /**/
 @media screen and (max-width: 767px) {
-    
+
     .sky-tabs .grid-col,
     .sky-tabs .grid-col:first-child {
         float: none;
         width: 100%;
         margin: 20px 0 0 0;
     }
-    
+
     .sky-tabs-response-to-stack > label {
         display: block;
         width: 100%;
@@ -1049,7 +1047,7 @@
     .sky-tabs-response-to-stack.sky-tabs-anim-flip > ul > li {
         -webkit-transform: rotateX(-90deg);
     }
-    
+
     .sky-tabs-response-to-icons > label {
         font-size: 0;
     }
@@ -1071,7 +1069,7 @@
     .sky-tabs-response-to-icons.sky-tabs-pos-right > ul {
         margin-right: 56px;
     }
-    
+
     .sky-tabs-response-to-switcher > label {
         display: none;
         width: 100%;
@@ -1105,7 +1103,7 @@
 }
 
 .deck-info{
-    float: right;height: auto;width: 25%;    
+    float: right;height: auto;width: 25%;
     vertical-align: middle;
     background-color: #FF9A00;
     color: #fafafa;
@@ -1138,23 +1136,25 @@
     //    overflow: hidden;
     }
     .panelHomePackDesc-i,.panelHomePackNo-i{
-        color:rgba(255,255,255,.65); 
+        color:rgba(255,255,255,.65);
         font: $fontSize*1.2 $fontApp;
     }
 }
 
-.panelDetailsPackDescPlace-i{
-    padding-top: 6%;
-    .panelHomePackLabel-i{
+.panelDetailsPackDescPlace-i {
+//    padding-top: 6%;
+    .panelHomePackLabel-i {
         color: #bbb;
         font: $fontSize*1.2 $fontApp;
     }
-    .panelHomePackTitle{
+    .panelHomePackTitle {
         line-height: inherit;
     }
 }
 .btn-place{
+    margin: 0px;
     margin-top: 10px;
+    padding: 0px;
 }
 /*.white-btn{
     background: #fff;
